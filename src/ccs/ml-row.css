@@ -1,0 +1,10 @@
+/* 
+    Style applied cause using grid layout system 
+    https://www.npmjs.com/package/react-simple-flex-grid
+    in order to avoid horizontal scroll
+*/
+.rct-grid-row {
+    margin-left:0px !important;
+    margin-right: 0px !important;
+}
+  

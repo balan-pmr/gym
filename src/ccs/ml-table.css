@@ -1,0 +1,220 @@
+
+table a:visited {
+    /*color: #0061A0;*/
+}
+table a:active, table a:hover {
+	text-decoration: none;
+}
+.ml-table-container {
+	padding: 30px;
+}
+.ml-table-expcol {
+	width: 95%;
+	color: #333333;
+	font-size: 13px;
+	background: #ffffff;
+	margin: 0px;
+	border-collapse: collapse;
+}
+.ml-table-title{
+	height: 37px;
+	line-height: 37px;
+	/*font-family: Georgia, serif; */
+	font-size: 14px;
+	font-weight: bold;
+	color: #ffffff;
+	background: #0061a0;
+}
+.ml-table-title-steps{
+	height: 37px;
+	line-height: 37px;
+	/*font-family: Georgia, serif; */
+	font-size: 14px;
+	font-weight: bold;
+	color: #ffffff;
+	background: #007ABC;
+}
+
+
+.ml-table-expcol th {
+	padding-left:18px;
+	border-top: 1px solid #0090DA;
+	border-bottom: 1px solid #0090DA;
+}
+.ml-table-expcol tr {
+	border-bottom: 1px solid #0090DA;
+	text-align: center;
+	height: 57px;
+}
+.ml-table-expcol td{
+	padding-left:18px;	
+	height: 30px;
+	font-size: 13px;
+}
+.ml-table-expcol tr.expanded {
+	border-bottom: 2px solid #0090DA;
+	border-top: 2px solid #0090DA;
+	background: #f2f2f2;
+}
+.ml-table-expcol tr td:first-child {
+    /* border-left: 10px solid #ffffff; */
+}
+.ml-table-expcol tr.expanded td:first-child {
+	background: url(/assets/patterns/border_BG.png) repeat-y left;
+}
+.ml-table-expcol tr.expandable-cell > td {
+	background: url(/assets/patterns/border_BG.png) repeat-y left;
+	border-right: 2px solid #0090DA;
+	min-height: 250px;
+}
+.ml-table-expcol tr.expandable-cell {
+	height:200px;
+	border-bottom: 2px solid #0090DA;
+	background: url(/assets/patterns/img/tables/down-arrow.png) no-repeat top center;
+	background-size: 14px;
+}
+/* Not for pattern this is just placeholder for demo */
+.ml-table-expcol tr.expandable-cell td > div {
+	
+	font-size:16px;
+	color:#7D7D7D;
+}
+/* =================================================*/
+.ml-table-expcol td:last-child {
+	/*background: url(/assets/patterns/img/tables/expand.svg) no-repeat center ;*/
+	background-size:28px ;
+	width: 50px;
+	padding-right:20px;
+	cursor: pointer;
+}
+/*.ml-table-expcol td:last-child:before {
+	
+	content:"show more";
+	display:inline-block;
+	
+	margin:0;
+	font-size: 10px;
+	font-weight:normal;
+	color: #333333;
+	text-decoration: none;
+	text-transform:uppercase;
+	letter-spacing:0.5px;
+	line-height:16px;
+}*/
+/*
+.ml-table-expcol tr.collapsed td:last-child:hover {
+	background: url(/assets/patterns/img/tables/expand-hover.svg) no-repeat center;
+	background-size:28px ;
+}
+.ml-table-expcol tr.expanded td:last-child {
+	background: url(/assets/patterns/img/tables/collapse.svg) no-repeat center;
+	background-size:28px ;
+	border-right: 2px solid #0090DA;
+}
+
+.ml-table-expcol tr.expanded td:last-child:hover {
+	background: url(/assets/patterns/img/tables/collapse-hover.svg) no-repeat center;
+	background-size:28px ;
+}
+*/
+/* =============== Table expand-collase style 2 ============= */
+.ml-table-expcol.style2 thead{
+	margin-bottom:5px;
+	padding-bottom: 5px;
+	border-bottom: 5px solid #ffffff;	
+}
+.ml-table-expcol.style2 thead tr{
+	height: 37px ;
+	line-height: 37px;
+	font-family: Georgia, serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #ffffff;
+	background: #007ABC;
+}
+
+.ml-table-expcol.style2 tbody tr:first-child{
+	border-top: 1px solid #0090DA;
+}
+.ml-table-expcol.style2 tr td:first-child {
+    border-left: 0px solid #ffffff;
+	
+}
+.ml-table-expcol.style2 tr.expanded td:first-child {
+	border-left: 0px solid #A4CE4E;
+	padding-left:17px;
+}
+.ml-table-expcol.style2  tr.expanded {
+	border: 2px solid #A4CE4E;
+	
+	background: #A4CE4E;
+}
+.ml-table-expcol.style2 tbody tr.expanded:first-child{
+	border-top: 2px solid #A4CE4E;
+}
+.ml-table-expcol.style2 tr.expanded td:first-child {
+	background: none;
+}
+.ml-table-expcol.style2 tr.expandable-cell td {
+	border-right: 2px solid #A4CE4E;
+	min-height: 250px;
+}
+.ml-table-expcol.style2 tr.expandable-cell {
+	height:200px;
+	border-bottom: 2px solid #A4CE4E;
+	background: url(/assets/patterns/img/tables/down-arrow-green.png) no-repeat top center;
+	background-size: 14px;
+}
+
+.ml-table-expcol.style2 tr.expandable-cell td {
+	background: none;
+	border: 2px solid #A4CE4E;
+	min-height: 250px;
+}
+
+.ml-table-expcol.style2 tr.expanded td:last-child {
+	
+	border-right: 2px solid #A4CE4E;
+}
+
+
+
+/* =============== Table alternate Rows ================= */
+
+
+.ml-table-alt-rows {
+	width: 60%;
+	color: #333333;
+	font-size: 13px;
+	background: #ffffff;
+	margin: 0px;
+	border-collapse: collapse;
+	box-shadow: 1px 3px 5px 0 rgba(0,0,0,0.1);
+}
+.ml-table-alt-rows th {
+}
+.ml-table-alt-rows tr {
+	text-align: center;
+	height: 37px;
+}
+.ml-table-alt-rows tr.even {
+	background-color: #FFFFFF;
+	border-bottom: 1px solid transparent;
+}
+.ml-table-alt-rows tr.odd {
+	background-color: #E5F4FB;
+	border-bottom: 1px solid transparent;
+}
+
+.ml-table-alt-rows tr.even td {
+	/* border-right: 2px solid transparent; */
+	/*border-left: 2px solid transparent; */
+
+}
+.ml-table-alt-rows tr.odd td {
+	/* border-right: 2px solid transparent; */
+	/*border-left: 2px solid transparent;*/
+}
+
+
+

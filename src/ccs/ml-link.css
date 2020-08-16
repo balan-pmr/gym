@@ -1,0 +1,22 @@
+.ml-link
+{
+  text-decoration: underline;
+  color: white;
+  font-weight: bold;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.ml-link:hover,
+.ml-link:focus,
+.hover.ml-link{
+  text-decoration: none;
+}
+
+.ml-link:focus{
+  outline-color: #333;
+  text-decoration: none;
+}
+.focus.ml-link{
+  box-shadow: 0 0 4px #333, 0 0 10px #333;
+}

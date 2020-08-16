@@ -1,0 +1,187 @@
+const homeTilte = (process.env.REACT_APP_LOREM_TEXT).split(",", 1);
+const homeDescription = (process.env.REACT_APP_LOREM_TEXT).split(".", 2);
+
+
+
+
+
+# Can use on app.js
+<Header title=" MX"/>
+<Footer copyright={` México ${new Date().getFullYear()}`} />
+
+# At jsx file
+Footer.defaultProps ={
+  copyright: ' México '+ new Date().getFullYear()
+};
+
+# Using Simple Grid Layout
+https://www.npmjs.com/package/react-simple-flex-grid
+
+# Origina version
+"react-scripts": "3.4.1",
+
+
+<div> Error details goes here: {item.text}</div>
+
+
+                <Row>
+                    <Col span={12}  >
+                        <Link to='/'>
+                            <span className="ml-button-primary">Return to Home</span>
+                        </Link>
+                    </Col>
+                </Row>
+
+                <br/>
+                <br/>
+
+    /*const elementsRef = useRef(dataResult.map(() => createRef())) ;   
+    const elementsImgRef = useRef(dataResult.map(() => createRef()));
+    */
+
+      //const [refElements, setRefElements ] = useState( useRef(dataResult.map(() => createRef()))  )
+    //const [refImgElements, setRefImgElements ] = useState( useRef(dataResult.map(() => createRef()))  )
+
+
+
+        
+    const loremText = (process.env.REACT_APP_LOREM_TEXT).split(".", 2);
+
+      
+
+                      console.log('result code: '+ result.code); 
+                console.log('result message: '+ result.message); 
+                console.log('result data: '+ JSON.stringify(result.data)); 
+
+
+                //"http://jsonplaceholder.typicode.com/users"
+            //"http://jsonplaceholder.typicode.com/todos"
+            //"http://jsonplacehosasdasdaasdsdalder.typicode.com/user/404aaaa"
+          
+
+          &nbsp;
+
+
+
+                                      <th>Usuario de actualización</th>
+                            <th>Fecha de actualización</th>
+                            <th>Código de error </th>
+                            <th>Mensaje de error</th>
+
+                                                                    <td>{item.requestSource.updateUserId}</td>
+                                        <td>{item.requestSource.updateDate}</td>
+                                        <td> ... </td>
+                                        <td> ... </td>
+
+            <tr className="odd">
+                <td>Inicio de la petición</td>
+                <td> 01/30/2020 14:01:10</td>
+                <td>1 </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+            </tr>
+            
+            <tr className="even">
+                <td>Petición a Quadient</td>
+                <td> 01/30/2020 14:02:10</td>
+                <td>1 </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+            </tr>
+            
+                    <tr className="odd">
+                <td>Respuesta de Quadient</td>
+                <td> 01/30/2020 14:03:10</td>
+                <td> 1 </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+            </tr>
+            
+            <tr className="even">
+                <td>Petición a Filenet</td>
+                <td> 01/30/2020 14:04:10</td>
+                <td> 1  </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+            </tr>
+                
+            <tr className="odd" >
+                <td>Respuesta de Filenet</td>
+                <td> 01/30/2020 14:05:10</td>
+                <td> 0 </td>
+                <td> 500 </td>
+                <td> Server not found </td>
+                <td > 
+                    <a href="/" onClick={handleShowPayload}  style={{color: '#0061A0'}}>  Ver  
+                    </a>
+                
+                </td>
+            </tr>                                        
+
+                                <th>Código de Error</th>
+                    <th>Mensaje de Error</th>
+
+
+
+
+                                            {process.env.REACT_APP_LOREM_TEXT}
+
+                                            ,  position:'absolute', bottom: '0%', right: '0', margin: '0 20px 20px 0'
+
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>Código de Error: </td>
+                                    <td>{props.payload.errorCode}</td>
+                                </tr>
+                                <tr>
+                                    <td>Mensaje  de Error: </td>
+                                    <td>{props.payload.errorMessage}</td>
+                                </tr>         
+                                <tr>
+                                    <td> Contenido de Payload: </td>   
+                                </tr>                       
+                                <tr>
+                                    <td>{props.payload.payloadMessage}</td>   
+                                </tr>                                                       
+                            </tbody>    
+                        </table>      
+                                                                    
+
+                                            
+
+
+import * as React from "react"
+
+const fakeAuth = {
+  isAuthenticated: false,
+  authenticate(cb) {
+    this.isAuthenticated = true
+    setTimeout(cb, 100) // fake async
+  },
+  signout(cb) {
+    this.isAuthenticated = false
+    setTimeout(cb, 100) // fake async
+  }
+}
+
+export default function App() {
+  return (
+    <div>
+      Hello World
+    </div>
+  )
+}
+
+
+
+
+<div style={{  paddingTop: '25px', backgroundColor: 'rgb(242, 242, 242)' }} >&nbsp;</div>
+            
+
+
+            

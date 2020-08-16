@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("./ccs/ml-link.css");
+@import url("./ccs/ml-button.css");
+@import url("./ccs/ml-form-field.css");
+@import url("./ccs/ml-dropdown.css");
+@import url("./ccs/ml-table.css");
+@import url("./ccs/ml-modal.css");
+@import url("./ccs/ml-row.css");
+@import url("./ccs/gn-table.css");
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333; 
+  margin: 0px;
+  padding: 0px;
+  width: 100%; 
+  height: 100%;
+}
+
+
