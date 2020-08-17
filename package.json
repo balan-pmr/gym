@@ -1,7 +1,7 @@
 {
   "name": "gymmetrics",
   "version": "0.1.0",
-  "homepage": "https://balan-pmr.github.io/gym",
+  "homepage": "./",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",

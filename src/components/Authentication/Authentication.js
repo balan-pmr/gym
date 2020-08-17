@@ -11,8 +11,6 @@ const Authentication ={
     onAuthentication(uid){
       this.isLogged=true;
       this.user.uid=uid;
-      //Trigger timer for logout user :: 1000 = 1s
-      //setTimeout(function(){ alert("Session is over, please login again."); }, 3000);
     },
     getLogginStatus(){
       return this.isLogged;

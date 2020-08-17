@@ -17,7 +17,7 @@ const Footer = ({ copyright }) => (
           <img src='./assets/images/gym/gym.png' alt="Home Icon" style={{width:'40px', margin:'5px' }}  />  
           </Col>
           <Col span={10} style={{ textAlign:'left'}} > 
-          <p style={{ fontStyle:'italic', fontSize:'15px'}} > made with love 4 Ale.  </p> 
+          <p style={{ fontStyle:'italic', fontSize:'15px'}} > made with love to Ale.  </p> 
           </Col>
           
       </Row>

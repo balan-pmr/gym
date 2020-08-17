@@ -10,37 +10,61 @@ import React from 'react';
 import Auth from './Authentication/Authentication';
 import { useHistory } from "react-router-dom";
 import Box from './Generic/Box';
+import { useState } from 'react';
 
 const Login = (props) => {
 
     let history = useHistory();
-
-    const handleLogIn = (e) => {
-        e.preventDefault();
-        let randomUser = stringGenerator(7);
-        Auth.onAuthentication(randomUser);
-        props.headerRef.current.updateLogged(Auth.getLogginStatus(), randomUser);
-        //Trigger timer for logout user :: 1000 = 1s
-        let minutesForActiveSession = parseInt(process.env.REACT_APP_MODAL_SESSION_ACTIVE_MINUTES);
-        let timeForActiveSession = 1000 * 60 * minutesForActiveSession;
-        setTimeout(() => { props.modalSessionRef.current.showModal() }, timeForActiveSession);
-        history.push("/home");
-    }
-
-    function stringGenerator(len) {
-        var text = " ";
-        var charset = "abcdefghijklmnopqrstuvwxyz0123456789";
-        for (var i = 0; i < len; i++)
-            text += charset.charAt(Math.floor(Math.random() * charset.length));
-        return text.toUpperCase();
+    const [pwdValue, setPwdValue] = useState('');
+    const [loading, setLoading] = useState(false);
+    const [errorMsg, setErrorMsg] = useState('');
+    
+    const handleLogIn = async (e) => {
+        e.preventDefault(); 
+        setLoading(true);
+        console.log('Fetching data from  ', process.env.REACT_APP_BASE_URL_API)
+        let obj = { password: pwdValue };
+        await fetch(
+            process.env.REACT_APP_BASE_URL_API,
+            { method: 'POST', body: JSON.stringify(obj) }
+        ).then(res => res.json())
+            .then(
+                (result) => {
+                    if (result !== null) {
+                        console.log('Result is ', result)
+                        if(result.result === "true"){
+                            Auth.onAuthentication('');
+                            props.headerRef.current.updateLogged('');
+                            let minutesForActiveSession = parseInt(process.env.REACT_APP_MODAL_SESSION_ACTIVE_MINUTES);
+                            let timeForActiveSession = 1000 * 60 * minutesForActiveSession;
+                            setTimeout(() => { 
+                                props.modalSessionRef.current.showModal();
+                                Auth.onLogout(); 
+                            }, timeForActiveSession);
+                            history.push("/ref");
+                        }else{
+                            setErrorMsg('password invalido.')
+                        }
+                    }
+                },
+                (error) => {
+                    console.log(error)
+                    setErrorMsg('Error inesperado: '+error)
+                }
+            );
+        setLoading(false);
     }
 
     return (
-        <div>
+        <div style={{paddingBottom:'400px'}}>
             <Box>
-                <div style={{ textAlign:'center' }} >
-                    <h5>Login impl goes here</h5>
-                    <input type="button" value="Ingresar" onClick={handleLogIn} />
+                <div style={{ textAlign: 'center', display: 'table' }} >
+                    <p>password:</p>
+                    <input type="password" onChange={event => setPwdValue(event.target.value)} value={pwdValue} style={{margin:'10px'}} /> 
+                    {loading ? <span className="ml-button-disabled">INGRESAR</span> :
+                        <a href="/" className="ml-button-primary" onClick={event => handleLogIn(event)}  > INGRESAR</a>
+                    }<br/>
+                    {errorMsg !==""? <p>{errorMsg}</p>:""}
                 </div>
             </Box>
         </div>

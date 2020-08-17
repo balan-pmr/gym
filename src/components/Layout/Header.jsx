@@ -12,6 +12,7 @@ import "react-simple-flex-grid/lib/main.css";
 import { useState } from 'react';
 import { forwardRef, useImperativeHandle } from 'react';
 import { Link } from 'react-router-dom';
+import Auth from '../Authentication/Authentication';
 
 const Header = forwardRef((props, ref) => {
 
@@ -19,8 +20,8 @@ const Header = forwardRef((props, ref) => {
     const [uid, setUid] = useState('');
 
     useImperativeHandle(ref, () => ({
-        updateLogged(state, uid) {
-            setLogged(state)
+        updateLogged(uid) {
+            setLogged(Auth.getLogginStatus())
             setUid(uid)
         }
     }));
@@ -29,8 +30,8 @@ const Header = forwardRef((props, ref) => {
         <Row gutter={40} style={{ backgroundColor: '#45b39d' }} >
 
             <Col span={4} style={{ textAlign: 'center' }}>
-                <Link to="/home" >
-                    <img src='./assets/images/gym/gym.png' alt="Home Icon" style={{ width: '80px', margin: '3px 0 0px 0' }} />
+                <Link to="/ref" >
+                    <img src='./assets/images/gym/gym.png' alt="Home Icon" style={{ width: '80px', margin: '15px 0 0px 0' }} />
                 </Link>
                 <p style={{ fontSize: '11px' }} > nosotros bien gorditos jiji  </p>
             </Col>
@@ -41,17 +42,29 @@ const Header = forwardRef((props, ref) => {
                             <Link to="/ref" >
                                 <span className="ml-link" >
                                     Referencias
-                            </span>
+                                 </span>
                             </Link>
                         </li>
-                        <li>
-                            <Link to="/ale" >
-                                <span className="ml-link" >
-                                    Ale
-                            </span>
-                            </Link>
-                        </li>
-                        <li>Balan</li>
+                        {Auth.getLogginStatus()
+                            &&
+                            <li>
+                                <Link to="/ale" >
+                                    <span className="ml-link" >
+                                        Ale
+                                    </span>
+                                </Link>
+                            </li>
+                        }
+                        {Auth.getLogginStatus()
+                            &&
+                            <li>
+                                <Link to="/balan" >
+                                    <span className="ml-link" >
+                                        Balan
+                                    </span>
+                                </Link>
+                            </li>
+                        }
                     </ul>
                 </nav>
 
@@ -59,7 +72,14 @@ const Header = forwardRef((props, ref) => {
 
             {logged ?
                 <Col span={4} style={{ display: 'flex', justifyContent: 'center' }} ><Logout uid={uid} headerRef={ref} /></Col>
-                : <Col span={4} />
+                :
+                <Col span={4}>
+                    <Link to="/" >
+                        <span className="ml-link" style={{marginTop:'60px'}} >
+                            iniciar
+                        </span>
+                    </Link>
+                </Col>
             }
 
         </Row>

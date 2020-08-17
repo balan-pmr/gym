@@ -20,14 +20,14 @@ const Logout = ({ uid, headerRef }) => {
       e.preventDefault();
       console.log('Removing user session....')
       Auth.onLogout();
-      headerRef.current.updateLogged( Auth.getLogginStatus(), '' );
+      headerRef.current.updateLogged('');
       history.push("/");
   }
 
   return (
     <div style={{ display:'inline-flex'}}  >
           <span style={{ marginTop: '28px' }} >{uid}</span>
-          <span style={{ marginTop: '28px', marginLeft: '15px' }}>
+          <span style={{ marginTop: '60px', marginLeft: '15px' }}>
             <a href="/" onClick={(event) => handleLogout(event)}  className="ml-link" >
               Cerrar Sesión
             </a>

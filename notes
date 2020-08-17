@@ -1,3 +1,38 @@
+DEPLOY WITH
+
+npm run deploy
+
+Note: Before deploy update this line in package.json
+  "homepage": "https://balan-pmr.github.io/gym",
+  "homepage": "https://balan-pmr.github.io/gym",
+
+when developing use
+  "homepage": "./",
+
+
+
+
+
+    function stringGenerator(len) {
+        var text = " ";
+        var charset = "abcdefghijklmnopqrstuvwxyz0123456789";
+        for (var i = 0; i < len; i++)
+            text += charset.charAt(Math.floor(Math.random() * charset.length));
+        return text.toUpperCase();
+    }
+
+    
+
+
+
+
+
+
+
+
+
+
+
 const homeTilte = (process.env.REACT_APP_LOREM_TEXT).split(",", 1);
 const homeDescription = (process.env.REACT_APP_LOREM_TEXT).split(".", 2);
 

@@ -12,12 +12,13 @@ import "react-simple-flex-grid/lib/main.css";
 import Box from "../Generic/Box";
 const References = (props) => {
     return (
-        <div>
+        <div style={{}} >
             <Row >
                 <Col span={12}>
                     <Box>
                         <h2>Body Fat Percentege</h2>
                         <table  style={{ width: '100%', textAlign: 'center' }}>
+                        <thead>
                             <tr>
                                 <th>Gender</th>
                                 <th>Age</th>
@@ -26,6 +27,7 @@ const References = (props) => {
                                 <th>+ (High)</th>
                                 <th>++ (Very High)</th>
                             </tr>
+                        </thead>
                             <tbody>
                                 <tr>
                                     <td rowSpan={3} >Female</td>
