@@ -13,6 +13,16 @@ when developing use
 
 
 
+
+
+
+
+
+
+
+
+
+
     function stringGenerator(len) {
         var text = " ";
         var charset = "abcdefghijklmnopqrstuvwxyz0123456789";
@@ -24,7 +34,10 @@ when developing use
     
 
 
+&nbsp;
 
+          <hr className="style-six"/>  
+          
 
 
 
@@ -94,7 +107,7 @@ https://www.npmjs.com/package/react-simple-flex-grid
             //"http://jsonplacehosasdasdaasdsdalder.typicode.com/user/404aaaa"
           
 
-          &nbsp;
+          
 
 
 

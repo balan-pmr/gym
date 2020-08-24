@@ -22,10 +22,32 @@ const Login = (props) => {
     const handleLogIn = async (e) => {
         e.preventDefault(); 
         setLoading(true);
-        console.log('Fetching data from  ', process.env.REACT_APP_BASE_URL_API)
+        if(process.env.REACT_APP_CURRENT_ENVIROMENT === "gym-development" ){
+            localLogin();
+        }else{
+            serviceLogin() 
+        }
+        setLoading(false);
+    }
+
+    function localLogin(){
+        console.log('local logging')
+        Auth.onAuthentication('');
+        props.headerRef.current.updateLogged('');
+        let minutesForActiveSession = parseInt(process.env.REACT_APP_MODAL_SESSION_ACTIVE_MINUTES);
+        let timeForActiveSession = 1000 * 60 * minutesForActiveSession;
+        setTimeout(() => { 
+            props.modalSessionRef.current.showModal();
+            Auth.onLogout(); 
+        }, timeForActiveSession);
+        history.push("/ref");        
+    }
+
+    async function serviceLogin(){
+        console.log('Fetching data from  ', process.env.REACT_APP_BASE_URL_API+process.env.REACT_APP_POST_VALIDATE_USER)
         let obj = { password: pwdValue };
         await fetch(
-            process.env.REACT_APP_BASE_URL_API,
+            process.env.REACT_APP_BASE_URL_API+process.env.REACT_APP_POST_VALIDATE_USER,
             { method: 'POST', body: JSON.stringify(obj) }
         ).then(res => res.json())
             .then(
@@ -52,7 +74,6 @@ const Login = (props) => {
                     setErrorMsg('Error inesperado: '+error)
                 }
             );
-        setLoading(false);
     }
 
     return (

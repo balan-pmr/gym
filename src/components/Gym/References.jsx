@@ -13,9 +13,10 @@ import Box from "../Generic/Box";
 const References = (props) => {
     return (
         <div style={{}} >
+        <Box>
             <Row >
                 <Col span={12}>
-                    <Box>
+                    <Box justify="left" >
                         <h2>Body Fat Percentege</h2>
                         <table  style={{ width: '100%', textAlign: 'center' }}>
                         <thead>
@@ -85,13 +86,15 @@ const References = (props) => {
 
             <Row>
                 <Col span={12} style={{ textAlign: 'left' }} >
-                <Box>
+                <Box justify="left" >
                         <h2>Viceral Fat Level</h2>
                         <table  style={{ width: '100%', textAlign: 'center' }}>
+                        <thead>
                             <tr>
                                 <th>Viceral Fat Level</th>
                                 <th>Viceral Fat Level Classification</th>
                             </tr>
+                        </thead>
                             <tbody>
                                 <tr>
                                     <td> &#60;&#61; 9 </td>
@@ -117,6 +120,7 @@ const References = (props) => {
                     <Box>
                         <h2>Skeletal Muscle Percentege </h2>
                         <table  style={{ width: '100%', textAlign: 'center' }}>
+                        <thead>
                             <tr>
                                 <th>Gender</th>
                                 <th>Age</th>
@@ -125,6 +129,7 @@ const References = (props) => {
                                 <th>+ (High)</th>
                                 <th>++ (Very High)</th>
                             </tr>
+                        </thead>
                             <tbody>
                                 <tr>
                                     <td rowSpan={3} >Female</td>
@@ -182,13 +187,15 @@ const References = (props) => {
 
             <Row>
                 <Col span={12} style={{ textAlign: 'left' }} >
-                <Box>
+                <Box justify="left">
                         <h2>BMI</h2>
                         <table  style={{ width: '100%', textAlign: 'center' }}>
+                        <thead>
                             <tr>
                                 <th>BMI</th>
                                 <th>BMI (DESIGNNATION BY WHO)</th>
                             </tr>
+                        </thead>
                             <tbody>
                                 <tr>
                                     <td>less than 18.5</td>
@@ -211,6 +218,8 @@ const References = (props) => {
                     </Box>
                 </Col>
             </Row>
+
+        </Box>            
         </div>
     );
 

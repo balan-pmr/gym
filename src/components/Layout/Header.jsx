@@ -75,8 +75,8 @@ const Header = forwardRef((props, ref) => {
                 :
                 <Col span={4}>
                     <Link to="/" >
-                        <span className="ml-link" style={{marginTop:'60px'}} >
-                            iniciar
+                        <span className="ml-link" style={{marginTop:'60px', backgroundColor: 'black' }} >
+                        &nbsp;iniciar&nbsp;
                         </span>
                     </Link>
                 </Col>

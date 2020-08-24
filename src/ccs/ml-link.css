@@ -5,6 +5,7 @@
   font-weight: bold;
   display: inline-block;
   text-decoration: none;
+  border-radius: 5px;
 }
 
 .ml-link:hover,

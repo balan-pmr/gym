@@ -1,0 +1,147 @@
+      
+.ml-msg-container{
+	/*width:100%;*/
+}
+
+.ml-msg{
+	max-width:600px; 
+	padding: 4px 0px 0px 0px;
+	margin-top: 5px;
+	color: #333333;
+	margin-bottom:5px;
+	font-weight:bold;
+	text-align: left;
+	display: block;
+	overflow: auto;
+}
+
+/* COLOR FOR INFO */
+.ml-msg-msg{
+	background: #CDF2C9;
+}
+
+/* COLOR FOR ERROR */
+.ml-msg-error {
+	background: #FDE8E8;
+	
+}
+
+
+.ml-msg-left{
+	min-height:37px;
+	line-height:1.4;
+	padding: 8px 0px 8px 0px;
+	text-align:left;
+	color: #333333;
+	margin-bottom:5px;
+	
+}
+
+.ml-msg-txt{
+	/*display:inline-block;*/
+	margin-left:15px;
+    margin-right:10px;
+    
+}
+
+/* ============ for mobile =========== */
+.msg-indent{
+	text-align:left;
+	top:0;
+	margin-top:-15px;
+	margin-bottom:15px;
+	padding: 0px 15px 0px 15px;
+	
+}
+
+.ml-msg img{
+	vertical-align:middle;
+	margin-top:-5px;
+	height:20px;
+}
+
+
+
+.ml-msg-confirmation {
+	background: #EDF5DC;
+	
+}
+.ml-msg-error a{
+	color: #0061A0;
+	font-weight:bold;
+	text-decoration:underline;
+}
+.ml-msg-error a:hover{
+	text-decoration:none;
+}
+
+.ml-msg-error-text {
+	color:#333333/*#DB1818*/;
+    font-weight:700;
+    float: left;
+    padding-left: 30px;
+}
+
+.high-priority{
+	color:#DB1818;
+	font-size:18px;
+	padding-right:5px;
+}
+.low-priority{
+	color:#0061A0;
+	font-size:18px;
+	padding-right:5px;
+}
+
+.confirmation{
+	color:#73982A/*#A4CE4E*/ ;
+	font-size:18px;
+	padding-right:5px;
+}
+
+.ml-msg-close{
+	float:right;
+	padding: 2px 20px 2px 8px;
+	cursor:pointer;
+	color:#0061A0;
+}
+
+.ml-msg-close:after{
+	/*content:url(/assets/patterns/close-icon.svg);*/
+	display:block;
+	width:16px;
+}
+
+.ml-msg-close:hover:after{
+	/*content:url(/assets/patterns/close-icon-hover.svg); */
+} 
+
+
+.low-priority {
+    color: #0061A0;
+    font-size: 18px;
+    padding-right: 5px;
+}
+
+/*
+.svg-inline--fa{
+    color: #0061A0 !important;
+}
+*/
+
+.svg-blue{
+    color: #0061A0 !important;
+}
+.svg-red{
+    color: #DB1818 !important;
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+        font-size: 14px;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
