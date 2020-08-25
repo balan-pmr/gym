@@ -29,7 +29,7 @@ const Logout = ({ uid, headerRef }) => {
           <span style={{ marginTop: '28px' }} >{uid}</span>
           <span style={{ marginTop: '60px', marginLeft: '15px' }}>
             <a href="/" onClick={(event) => handleLogout(event)}  className="ml-link" style={{backgroundColor: 'black'}}  >
-            &nbsp; Cerrar Sesión&nbsp;
+            &nbsp;Cerrar Sesión&nbsp;
             </a>
           </span>
     </div>

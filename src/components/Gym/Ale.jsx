@@ -10,11 +10,13 @@ import React from 'react';
 import Box from "../Generic/Box";
 import { useEffect,useState,useRef } from 'react';
 import Message from '../Generic/Message';
+import AddNewRecord from '../Gym/AddNewRecord';
 
 const Ale = (props) => {
 
     const [records, setRecords] = useState([]);
     const refMessageInfo = useRef();
+    const recordRef = useRef(null);
 
     // onMountComponnet
     useEffect( () => {
@@ -40,11 +42,13 @@ const Ale = (props) => {
 
 
     function handleNewRecord(){
-        alert('Working in progress...')
+        //alert('Working in progress...')
+        recordRef.current.showModal();
     }
 
     return (
         <div>
+            <AddNewRecord ref={recordRef} />
             <Message ref={refMessageInfo} typeMessage="info" />
             <Box>
                 <div style={{textAlign:'center'}}>
@@ -55,12 +59,13 @@ const Ale = (props) => {
                 {records.map(
                         (item, index) => {
                             return (
-                                <span>
+                                <span key={index} >
                                     <Box>
                                         <p>Fecha : <b> {item.date} </b> </p>
                                         <p>edad : <b>{item.age} </b> </p>
                                         <p>altura : <b>{item.height}  </b> </p>
                                         <p>peso : <b>{item.weight}  </b> </p>
+                                        <p>grasa : <b>{item.fat}  </b> </p>
                                         <p>ibm : <b>{item.ibm} </b> </p>
                                         <p>muscle : <b>{item.muscle} </b> </p>
                                         <p>viseral : <b>{item.viseral} </b> </p>
