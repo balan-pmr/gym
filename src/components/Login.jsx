@@ -80,7 +80,6 @@ const Login = (props) => {
         <div style={{paddingBottom:'400px'}}>
             <Box>
                 <div style={{ textAlign: 'center', display: 'table' }} >
-                    <p>password:</p>
                     <input type="password" onChange={event => setPwdValue(event.target.value)} value={pwdValue} style={{margin:'10px'}} /> 
                     {loading ? <span className="ml-button-disabled">INGRESAR</span> :
                         <a href="/" className="ml-button-primary" onClick={event => handleLogIn(event)}  > INGRESAR</a>

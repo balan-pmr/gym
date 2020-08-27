@@ -23,6 +23,121 @@ when developing use
 
 
 
+
+                <div style={{ display: 'table-caption' }} >
+                    <p> PESO:  <input type="text" onChange={event => setPeso(event.target.value)} value={peso} style={{ margin: '10px' }} />  </p>
+                    <p> GRASA:  <input type="text" onChange={event => setFat(event.target.value)} value={fat} style={{ margin: '10px' }} />  </p>                        
+                    <p> IBM:  <input type="text" onChange={event => setIbm(event.target.value)} value={ibm} style={{ margin: '10px' }} />  </p>
+                    <p> MUSCLE:  <input type="text" onChange={event => setMuscle(event.target.value)} value={muscle} style={{ margin: '10px' }} />  </p>
+                    <p> VISERAL:  <input type="text" onChange={event => setViseral(event.target.value)} value={viseral} style={{ margin: '10px' }} />  </p>
+                    <p> EDAD METABOLICA:  <input type="text" onChange={event => setMetabolicAge(event.target.value)} value={metabolicAge} style={{ margin: '10px' }} />  </p>
+                    <p> RESTING METABOLIC:  <input type="text" onChange={event => setRestMetabol(event.target.value)} value={restMetabol} style={{ margin: '10px' }} />  </p>
+                
+                </div>
+
+
+
+                
+
+
+
+
+
+
+
+
+
+
+                                        <table style={{ width: '100%', textAlign: 'center' }}>
+                                            <thead>
+                                                <tr>
+                                                    <th>edad</th>
+                                                    <th>altura</th>
+                                                    <th>peso</th>
+                                                    <th>grasa</th>
+                                                    <th>bmi</th>
+                                                    <th>muscle</th>
+                                                    <th>edad metabolica</th>
+                                                    <th>resting metabolism</th>    
+                                                    <th>viseral</th>                                                                                                                                                            
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><b>{item.age}</b></td>
+                                                    <td><b>{item.height}</b></td>
+                                                    <td><b>{item.weight}</b></td>
+                                                    <td><b>{item.fat}</b></td>
+                                                    <td><b>{item.ibm}</b></td>
+                                                    <td><b>{item.muscle}</b></td>
+                                                    <td><b>{item.ageMetabol}</b></td>
+                                                    <td><b>{item.restMetabol}</b></td>
+                                                    <td><b>{item.viseral}</b></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+
+
+
+
+
+                                    {
+                                        (index + 1) !== records.length ? 
+                                        <div style={{textAlign:'center'}}>
+                                            <img style={{borderRadius:'50px', width:'50px' }} src="./assets/patterns/up-arrow-button.png" alt="Up Arrow" /> 
+                                        </div>                                        
+                                        :
+                                        <div></div>
+                                    }
+
+
+
+
+                   <table  style={{ width: '100%', textAlign: 'center' }}>
+                        <thead>
+                            <tr>
+                                <th>Gender</th>
+                                <th>Age</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                <tr>
+                                    <td>Female</td>
+                                    <td><b>20-29</b></td>
+                                </tr>
+                        </tbody>
+                    </table>
+
+
+                                    <Box justify="center">
+                                        <div style={dateStyle}> {item.date.substring(0,10)} </div>
+                                        <p>edad : <b>{item.age} </b> </p>
+                                        <p>altura : <b>{item.height}  </b> </p>
+                                        <p>peso : <b>{item.weight}  </b> </p>
+                                        <p>grasa : <b>{item.fat}  </b> </p>
+                                        <p>ibm : <b>{item.ibm} </b> </p>
+                                        <p>muscle : <b>{item.muscle} </b> </p>
+                                        <p>edad metabolica : <b>{item.ageMetabol} </b> </p>       
+                                        <p>resting metabolism : <b>{item.restMetabol} </b> </p>        
+                                        <p>viseral : <b>{item.viseral} </b> </p>               
+                                    </Box>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     function stringGenerator(len) {
         var text = " ";
         var charset = "abcdefghijklmnopqrstuvwxyz0123456789";

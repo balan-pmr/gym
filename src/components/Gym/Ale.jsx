@@ -11,6 +11,8 @@ import Box from "../Generic/Box";
 import { useEffect,useState,useRef } from 'react';
 import Message from '../Generic/Message';
 import AddNewRecord from '../Gym/AddNewRecord';
+import moment from 'moment';
+import 'moment/locale/es';
 
 const Ale = (props) => {
 
@@ -46,6 +48,17 @@ const Ale = (props) => {
         recordRef.current.showModal();
     }
 
+    const dateStyle = {
+            backgroundColor: 'ghostwhite',
+            margin: '-7px 5px 15px',
+            borderRadius: '5px',
+            padding: '5px',
+            color: 'black',
+            textAlign: 'center',
+            fontWeight: 'bold',
+            boxShadow: '1px 3px 5px 0 darkcyan' 
+    };
+
     return (
         <div>
             <AddNewRecord ref={recordRef} />
@@ -60,25 +73,52 @@ const Ale = (props) => {
                         (item, index) => {
                             return (
                                 <span key={index} >
-                                    <Box>
-                                        <p>Fecha : <b> {item.date} </b> </p>
-                                        <p>edad : <b>{item.age} </b> </p>
-                                        <p>altura : <b>{item.height}  </b> </p>
-                                        <p>peso : <b>{item.weight}  </b> </p>
-                                        <p>grasa : <b>{item.fat}  </b> </p>
-                                        <p>ibm : <b>{item.ibm} </b> </p>
-                                        <p>muscle : <b>{item.muscle} </b> </p>
-                                        <p>viseral : <b>{item.viseral} </b> </p>
-                                        <p>edad metabolica : <b>{item.ageMetabol} </b> </p>                       
+                                    <Box justify="center">
+                                        <div style={dateStyle}> {( moment(item.date.substring(0,10)).locale('es') ).format('LL')}  </div>
+                                        <table style={{ width: '100%', textAlign: 'center' }} className="greyGridTable"  >
+                                            <thead>
+                                                <tr>
+                                                    <th>edad</th>
+                                                    <th>{item.age}</th>                                                                                       
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><b>altura</b></td>
+                                                    <td><b>{item.height}</b></td>                                                    
+                                                </tr>
+                                                <tr>
+                                                    <td><b>peso</b></td>
+                                                    <td><b>{item.weight}</b></td>                                                    
+                                                </tr>    
+                                                <tr>
+                                                    <td><b>grasa</b></td>
+                                                    <td><b>{item.fat}</b></td>                                                    
+                                                </tr>   
+                                                <tr>
+                                                    <td><b>bmi</b></td>
+                                                    <td><b>{item.ibm}</b></td>                                                    
+                                                </tr>  
+                                                <tr>
+                                                    <td><b>muscle</b></td>
+                                                    <td><b>{item.muscle}</b></td>                                                    
+                                                </tr>  
+                                                <tr>
+                                                    <td><b>metabolic age</b></td>
+                                                    <td><b>{item.ageMetabol}</b></td>                                                    
+                                                </tr>   
+                                                <tr>
+                                                    <td><b>resting metabolism</b></td>
+                                                    <td><b>{item.restMetabol}</b></td>                                                    
+                                                </tr>   
+                                                <tr>
+                                                    <td><b>Viseral</b></td>
+                                                    <td><b>{item.viseral}</b></td>                                                    
+                                                </tr>   
+
+                                            </tbody>
+                                        </table>
                                     </Box>
-                                    {
-                                        (index + 1) !== records.length ? 
-                                        <div style={{textAlign:'center'}}>
-                                            <img style={{borderRadius:'50px', width:'50px' }} src="./assets/patterns/up-arrow-button.png" alt="Up Arrow" /> 
-                                        </div>                                        
-                                        :
-                                        <div></div>
-                                    }
                                 </span>
                             );
                         })

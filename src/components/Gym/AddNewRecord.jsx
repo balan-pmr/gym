@@ -37,6 +37,7 @@ const AddNewRecord = forwardRef((props, ref) => {
     const [viseral, setViseral] = useState('');
     const [metabolicAge, setMetabolicAge] = useState('');
     const [fat, setFat] = useState('');
+    const [restMetabol, setRestMetabol] = useState('');
     const [loading, setLoading] = useState(false);
     const refMessageInfo = useRef();
     const refMessageError = useRef();
@@ -60,7 +61,8 @@ const AddNewRecord = forwardRef((props, ref) => {
                 "muscle": muscle,
                 "viseral":viseral,
                 "metabolicAge":metabolicAge,
-                "fat":fat
+                "fat":fat,
+                "restMetabol": restMetabol
             }
             console.log(JSON.stringify(bodyRequest)); 
             console.log('Fetching data from  ', process.env.REACT_APP_BASE_URL_API+process.env.REACT_APP_POST_SAVE_NEW_RECORD+"&sheetName=ale")
@@ -111,14 +113,39 @@ const AddNewRecord = forwardRef((props, ref) => {
                 </div>
                 <h1 className="header-small align-center">  Agregar Registro </h1>
 
-                <div style={{ display: 'table-caption' }} >
-                    <p> PESO:  <input type="text" onChange={event => setPeso(event.target.value)} value={peso} style={{ margin: '10px' }} />  </p>
-                    <p> GRASA:  <input type="text" onChange={event => setFat(event.target.value)} value={fat} style={{ margin: '10px' }} />  </p>                        
-                    <p> IBM:  <input type="text" onChange={event => setIbm(event.target.value)} value={ibm} style={{ margin: '10px' }} />  </p>
-                    <p> MUSCLE:  <input type="text" onChange={event => setMuscle(event.target.value)} value={muscle} style={{ margin: '10px' }} />  </p>
-                    <p> VISERAL:  <input type="text" onChange={event => setViseral(event.target.value)} value={viseral} style={{ margin: '10px' }} />  </p>
-                    <p> EDAD METABOLICA:  <input type="text" onChange={event => setMetabolicAge(event.target.value)} value={metabolicAge} style={{ margin: '10px' }} />  </p>
-                </div>
+                <table style={{ width: '100%', textAlign: 'center' }} className="greyGridTable"  >
+                    <tbody>
+                        <tr>
+                            <td><b>PESO:</b></td>
+                            <td><input type="text" onChange={event => setPeso(event.target.value)} value={peso} style={{ margin: '10px' }} /></td>
+                        </tr>
+                        <tr>
+                            <td><b>GRASA</b></td>
+                            <td><input type="text" onChange={event => setFat(event.target.value)} value={fat} style={{ margin: '10px' }} /></td>
+                        </tr>
+                        <tr>
+                            <td><b>BMI</b></td>
+                            <td>  <input type="text" onChange={event => setIbm(event.target.value)} value={ibm} style={{ margin: '10px' }} /> </td>
+                        </tr>
+                        <tr>
+                            <td><b>MUSCLE</b></td>
+                            <td> <input type="text" onChange={event => setMuscle(event.target.value)} value={muscle} style={{ margin: '10px' }} />  </td>
+                        </tr>
+                        <tr>
+                            <td><b>VISERAL</b></td>
+                            <td> <input type="text" onChange={event => setViseral(event.target.value)} value={viseral} style={{ margin: '10px' }} /> </td>
+                        </tr>
+                        <tr>
+                            <td><b>EDAD METABOLICA</b></td>
+                            <td> <input type="text" onChange={event => setMetabolicAge(event.target.value)} value={metabolicAge} style={{ margin: '10px' }} /> </td>
+                        </tr>
+                        <tr>
+                            <td><b>RESTING METABOLISM</b></td>
+                            <td><input type="text" onChange={event => setRestMetabol(event.target.value)} value={restMetabol} style={{ margin: '10px' }} /></td>
+                        </tr>
+                    </tbody>
+                </table>
+
 
                 <br />
 

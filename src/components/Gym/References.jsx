@@ -9,19 +9,20 @@
 import React from 'react';
 import { Row, Col } from 'react-simple-flex-grid';
 import "react-simple-flex-grid/lib/main.css";
-import Box from "../Generic/Box";
+import Box from '../Generic/Box';
+
 
 const References = (props) => {
 
     return (
         <div style={{}} >
-                
+
         <Box>
             <Row >
                 <Col span={12}>
-                    <Box justify="left" >
+                    <Box  >
                         <h2>Body Fat Percentege</h2>
-                        <table  style={{ width: '100%', textAlign: 'center' }}>
+                        <table  style={{ width: '100%', textAlign: 'center' }} className="greyGridTable"  >
                         <thead>
                             <tr>
                                 <th>Gender</th>
@@ -89,9 +90,9 @@ const References = (props) => {
 
             <Row>
                 <Col span={12} style={{ textAlign: 'left' }} >
-                <Box justify="left" >
+                <Box >
                         <h2>Viceral Fat Level</h2>
-                        <table  style={{ width: '100%', textAlign: 'center' }}>
+                        <table  style={{ width: '100%', textAlign: 'center' }} className="greyGridTable"  >
                         <thead>
                             <tr>
                                 <th>Viceral Fat Level</th>
@@ -122,7 +123,7 @@ const References = (props) => {
                 <Col span={12}>
                     <Box>
                         <h2>Skeletal Muscle Percentege </h2>
-                        <table  style={{ width: '100%', textAlign: 'center' }}>
+                        <table  style={{ width: '100%', textAlign: 'center' }} className="greyGridTable"  >
                         <thead>
                             <tr>
                                 <th>Gender</th>
@@ -190,9 +191,9 @@ const References = (props) => {
 
             <Row>
                 <Col span={12} style={{ textAlign: 'left' }} >
-                <Box justify="left">
+                <Box >
                         <h2>BMI</h2>
-                        <table  style={{ width: '100%', textAlign: 'center' }}>
+                        <table  style={{ width: '100%', textAlign: 'center' }} className="greyGridTable"  >
                         <thead>
                             <tr>
                                 <th>BMI</th>
