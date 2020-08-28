@@ -76,7 +76,7 @@ const Metrics = (props) => {
             <Message ref={refMessageInfo} typeMessage="info" />
             <Box>
                 <div style={{textAlign:'center'}}>
-                <img style={{borderRadius:'50px', width:'100px' }} src={props.match.params.id==="ale"?"/assets/images/profiles/ale.png":"/assets/images/profiles/balan.PNG"} alt="Avatar" /> 
+                <img style={{borderRadius:'50px', width:'100px' }} src={props.match.params.id==="ale"?"./assets/images/profiles/ale.png":"./assets/images/profiles/balan.PNG"} alt="Avatar" /> 
                 <br/>
                 { records.length > 0 ? 
                     <div>
