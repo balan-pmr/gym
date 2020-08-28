@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/gym/static/css/main.a9927d5b.chunk.css",
-    "main.js": "/gym/static/js/main.51c92a70.chunk.js",
-    "main.js.map": "/gym/static/js/main.51c92a70.chunk.js.map",
+    "main.js": "/gym/static/js/main.65195a52.chunk.js",
+    "main.js.map": "/gym/static/js/main.65195a52.chunk.js.map",
     "runtime-main.js": "/gym/static/js/runtime-main.547a0567.js",
     "runtime-main.js.map": "/gym/static/js/runtime-main.547a0567.js.map",
     "static/css/2.10f67ca9.chunk.css": "/gym/static/css/2.10f67ca9.chunk.css",
     "static/js/2.3c3b227c.chunk.js": "/gym/static/js/2.3c3b227c.chunk.js",
     "static/js/2.3c3b227c.chunk.js.map": "/gym/static/js/2.3c3b227c.chunk.js.map",
     "index.html": "/gym/index.html",
-    "precache-manifest.48bae06e7dce4463d3619925fad649be.js": "/gym/precache-manifest.48bae06e7dce4463d3619925fad649be.js",
+    "precache-manifest.23d3158ef828469967a80aa1737f38a5.js": "/gym/precache-manifest.23d3158ef828469967a80aa1737f38a5.js",
     "service-worker.js": "/gym/service-worker.js",
     "static/css/2.10f67ca9.chunk.css.map": "/gym/static/css/2.10f67ca9.chunk.css.map",
     "static/css/main.a9927d5b.chunk.css.map": "/gym/static/css/main.a9927d5b.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.10f67ca9.chunk.css",
     "static/js/2.3c3b227c.chunk.js",
     "static/css/main.a9927d5b.chunk.css",
-    "static/js/main.51c92a70.chunk.js"
+    "static/js/main.65195a52.chunk.js"
   ]
 }
