@@ -14,7 +14,7 @@ import NotFound404 from '../NotFound404';
 import {Route, Switch} from 'react-router-dom';
 import { useRef } from 'react';
 import References from '../Gym/References'
-import Ale from '../Gym/Ale'
+import Metrics from '../Gym/Metrics';
 
 const Content = (props) => {
   const modalSessionRef = useRef();
@@ -25,7 +25,7 @@ const Content = (props) => {
           <Route exact path="/" render={(innerprops) => ( <Login {...innerprops} headerRef={props.headerRef} modalSessionRef={modalSessionRef} /> ) }  />
           <SecuredRoute exact path="/home" component={Home} />
           <Route exact path="/ref" component={References}/>
-          <SecuredRoute exact path="/ale" component={Ale}/>
+          <SecuredRoute exact path='/metrics/:id'  component={Metrics} />
           <Route component={NotFound404}/>
         </Switch>
       </div>

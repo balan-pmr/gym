@@ -13,19 +13,22 @@ import Message from '../Generic/Message';
 import AddNewRecord from '../Gym/AddNewRecord';
 import moment from 'moment';
 import 'moment/locale/es';
+import ReferencesModal from '../Generic/Modals/ReferencesModal';
 
-const Ale = (props) => {
+const Metrics = (props) => {
 
     const [records, setRecords] = useState([]);
     const refMessageInfo = useRef();
     const recordRef = useRef(null);
+    const referencesModalRef = useRef(null);
+    
 
     // onMountComponnet
     useEffect( () => {
         async function fetchData() {
-            console.log('Getting information for Ale gym records');
+            console.log('Getting information for '+props.match.params.id+' gym records');
             refMessageInfo.current.showMessage('Consultado Registros')
-            await fetch(process.env.REACT_APP_BASE_URL_API+process.env.REACT_APP_GET_GYM_USER_INFO+"ale")
+            await fetch(process.env.REACT_APP_BASE_URL_API+process.env.REACT_APP_GET_GYM_USER_INFO+props.match.params.id)
                 .then(res => res.json())
                 .then(
                     (result) => {
@@ -40,12 +43,16 @@ const Ale = (props) => {
             refMessageInfo.current.hideMessage();
         }
         fetchData();
-    }, [setRecords]);
+    }, [setRecords,props.match.params.id]);
+
 
 
     function handleNewRecord(){
-        //alert('Working in progress...')
         recordRef.current.showModal();
+    }
+
+    function handleShowReferences(){
+        referencesModalRef.current.showModal();
     }
 
     const dateStyle = {
@@ -61,13 +68,22 @@ const Ale = (props) => {
 
     return (
         <div>
-            <AddNewRecord ref={recordRef} />
+            
+            <AddNewRecord ref={recordRef}  id={props.match.params.id} />
+            
+            <ReferencesModal ref={referencesModalRef} />
+
             <Message ref={refMessageInfo} typeMessage="info" />
             <Box>
                 <div style={{textAlign:'center'}}>
-                <img style={{borderRadius:'50px', width:'100px' }} src="./assets/images/profiles/ale.png" alt="Avatar" /> 
+                <img style={{borderRadius:'50px', width:'100px' }} src={props.match.params.id==="ale"?"/assets/images/profiles/ale.png":"/assets/images/profiles/balan.PNG"} alt="Avatar" /> 
                 <br/>
-                { records.length > 0 ? <span className="ml-button-primary" onClick={event => handleNewRecord(event)}  > Nuevo registro </span> :<span></span>}
+                { records.length > 0 ? 
+                    <div>
+                        <span style={{marginRight: '6px'}} className="ml-button-primary" onClick={event => handleNewRecord(event)}  > Nuevo registro </span> 
+                        <span className="ml-button-primary" onClick={event => handleShowReferences(event)}  > Referencias </span> 
+                    </div>
+                    : <span></span>}
                 </div>
                 {records.map(
                         (item, index) => {
@@ -125,8 +141,8 @@ const Ale = (props) => {
                 }
             </Box>
         </div>
-    );
+    );    
 
 }
  
-export default Ale;
+export default Metrics;

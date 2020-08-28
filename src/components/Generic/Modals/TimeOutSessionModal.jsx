@@ -36,7 +36,7 @@ const TimeOutSessionModal = forwardRef( (props, ref) => {
     }
 
     return (
-        show && <span>
+        show && 
             <div className="modal" style={{zIndex: '3000'}}   >
                 <div className="ml-lightbox-container-session modal-main" >
                     <div style={{display: 'flex'}}>                                            
@@ -63,10 +63,7 @@ const TimeOutSessionModal = forwardRef( (props, ref) => {
                     </div> <br/><br/>                     
                     <br/><br/><br/><br/>
                 </div>
-            </div>
-
-        </span>
-        
+            </div>        
     );
 
 });

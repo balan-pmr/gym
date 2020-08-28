@@ -65,9 +65,9 @@ const AddNewRecord = forwardRef((props, ref) => {
                 "restMetabol": restMetabol
             }
             console.log(JSON.stringify(bodyRequest)); 
-            console.log('Fetching data from  ', process.env.REACT_APP_BASE_URL_API+process.env.REACT_APP_POST_SAVE_NEW_RECORD+"&sheetName=ale")
+            console.log('Fetching data from  ', process.env.REACT_APP_BASE_URL_API+process.env.REACT_APP_POST_SAVE_NEW_RECORD+"&sheetName="+props.id)
             await fetch(
-                process.env.REACT_APP_BASE_URL_API+process.env.REACT_APP_POST_SAVE_NEW_RECORD+"&sheetName=ale",
+                process.env.REACT_APP_BASE_URL_API+process.env.REACT_APP_POST_SAVE_NEW_RECORD+"&sheetName="+props.id,
                 { method: 'POST', body: JSON.stringify(bodyRequest) }
             ).then(res => res.json())
                 .then(

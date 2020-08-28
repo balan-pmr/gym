@@ -48,7 +48,7 @@ const Header = forwardRef((props, ref) => {
                         {Auth.getLogginStatus()
                             &&
                             <li>
-                                <Link to="/ale" >
+                                <Link  to={`/metrics/ale`}  >
                                     <span className="ml-link" >
                                         Ale
                                     </span>
@@ -58,7 +58,7 @@ const Header = forwardRef((props, ref) => {
                         {Auth.getLogginStatus()
                             &&
                             <li>
-                                <Link to="/balan" >
+                                <Link to={`/metrics/balan`}   >
                                     <span className="ml-link" >
                                         Balan
                                     </span>
