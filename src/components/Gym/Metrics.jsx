@@ -21,11 +21,12 @@ const Metrics = (props) => {
     const refMessageInfo = useRef();
     const recordRef = useRef(null);
     const referencesModalRef = useRef(null);
-    
+    const [show, setShow] = useState(false);
 
     // onMountComponnet
     useEffect( () => {
         async function fetchData() {
+            setShow(false);
             console.log('Getting information for '+props.match.params.id+' gym records');
             refMessageInfo.current.showMessage('Consultado Registros')
             await fetch(process.env.REACT_APP_BASE_URL_API+process.env.REACT_APP_GET_GYM_USER_INFO+props.match.params.id)
@@ -34,6 +35,7 @@ const Metrics = (props) => {
                     (result) => {
                         console.log('result is', result)
                         setRecords(result);
+                        setShow(true);
                     },
                     (error) => {
                         let errorString =String(error);
@@ -76,16 +78,23 @@ const Metrics = (props) => {
             <Message ref={refMessageInfo} typeMessage="info" />
             <Box>
                 <div style={{textAlign:'center'}}>
-                <img style={{borderRadius:'50px', width:'100px' }} src={props.match.params.id==="ale"?"./assets/images/profiles/ale.png":"./assets/images/profiles/balan.PNG"} alt="Avatar" /> 
+                
+                {
+                    props.match.params.id ==="ale"?
+                    <img style={{borderRadius:'50px', width:'100px' }} src={process.env.REACT_APP_ROUTER_BASE+'/assets/images/profiles/ale.png'} alt="Avatar" />                     
+                    :
+                    <img style={{borderRadius:'50px', width:'100px' }} src={process.env.REACT_APP_ROUTER_BASE+'/assets/images/profiles/balan.PNG'} alt="Avatar" /> 
+                }
+                
                 <br/>
-                { records.length > 0 ? 
+                { records.length > 0 && show ? 
                     <div>
                         <span style={{marginRight: '6px'}} className="ml-button-primary" onClick={event => handleNewRecord(event)}  > Nuevo registro </span> 
                         <span className="ml-button-primary" onClick={event => handleShowReferences(event)}  > Referencias </span> 
                     </div>
                     : <span></span>}
                 </div>
-                {records.map(
+                {show && records.map(
                         (item, index) => {
                             return (
                                 <span key={index} >
