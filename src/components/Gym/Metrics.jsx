@@ -13,14 +13,13 @@ import Message from '../Generic/Message';
 import AddNewRecord from '../Gym/AddNewRecord';
 import moment from 'moment';
 import 'moment/locale/es';
-import ReferencesModal from '../Generic/Modals/ReferencesModal';
+import References from './References';
 
 const Metrics = (props) => {
 
     const [records, setRecords] = useState([]);
     const refMessageInfo = useRef();
     const recordRef = useRef(null);
-    const referencesModalRef = useRef(null);
     const [show, setShow] = useState(false);
 
     // onMountComponnet
@@ -53,10 +52,6 @@ const Metrics = (props) => {
         recordRef.current.showModal();
     }
 
-    function handleShowReferences(){
-        referencesModalRef.current.showModal();
-    }
-
     const dateStyle = {
             backgroundColor: 'ghostwhite',
             margin: '-7px 5px 15px',
@@ -73,10 +68,10 @@ const Metrics = (props) => {
             
             <AddNewRecord ref={recordRef}  id={props.match.params.id} />
             
-            <ReferencesModal ref={referencesModalRef} />
-
             <Message ref={refMessageInfo} typeMessage="info" />
-            <Box>
+
+            <Box display="table-cell"   >
+                
                 <div style={{textAlign:'center'}}>
                 
                 {
@@ -87,18 +82,19 @@ const Metrics = (props) => {
                 }
                 
                 <br/>
+
                 { records.length > 0 && show ? 
                     <div>
                         <span style={{marginRight: '6px'}} className="ml-button-primary" onClick={event => handleNewRecord(event)}  > Nuevo registro </span> 
-                        <span className="ml-button-primary" onClick={event => handleShowReferences(event)}  > Referencias </span> 
                     </div>
-                    : <span></span>}
+                    : <span></span>
+                }
+
                 </div>
                 {show && records.map(
                         (item, index) => {
                             return (
-                                <span key={index} >
-                                    <Box justify="center">
+                                    <Box display="table-cell" key={index} >
                                         <div style={dateStyle}> {( moment(item.date.substring(0,10)).locale('es') ).format('LL')}  </div>
                                         <table style={{ width: '100%', textAlign: 'center' }} className="greyGridTable"  >
                                             <thead>
@@ -144,11 +140,14 @@ const Metrics = (props) => {
                                             </tbody>
                                         </table>
                                     </Box>
-                                </span>
                             );
                         })
                 }
             </Box>
+            <br/>
+            
+            {show && <References/>}
+
         </div>
     );    
 

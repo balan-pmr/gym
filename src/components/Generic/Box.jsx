@@ -10,7 +10,12 @@ import React from 'react';
 
 const Box = (props) => {
 
-    const boxWrapper ={ display: 'flex', justifyContent: props.justify !== undefined ? props.justify : 'center' , padding: '10px 0 10px 0' }
+    const boxWrapper ={ 
+            display:  props.display !== undefined? props.display: 'flex', 
+            justifyContent: props.justify !== undefined ? props.justify : 'center' , 
+            padding: '10px' 
+    }
+
     const boxContent={
         backgroundColor: 'white',
         maxHeight: 'auto',
