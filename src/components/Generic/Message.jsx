@@ -11,7 +11,7 @@ import React from 'react';
 import { forwardRef, useImperativeHandle } from 'react';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faExclamationCircle, faHeart } from '@fortawesome/free-solid-svg-icons'
+import { faExclamationCircle, faDumbbell } from '@fortawesome/free-solid-svg-icons'
 
 //const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)   
 
@@ -56,13 +56,13 @@ const Message = forwardRef((props, ref) => {
                             {messageQueue.map((value, index) =>
                                 <span key={index}>
                                     {props.typeMessage === "info" ?
-                                        <FontAwesomeIcon icon={faHeart} className="svg-blue" />
+                                        <FontAwesomeIcon icon={faDumbbell} className="svg-blue" />
                                         : <FontAwesomeIcon icon={faExclamationCircle} className="svg-red" />}
                                     &nbsp;
                                         {value}
                                     &nbsp;
                                     {props.typeMessage === "info" ?
-                                        <FontAwesomeIcon icon={faHeart} className="svg-blue" />
+                                        <FontAwesomeIcon icon={faDumbbell} className="svg-blue" />
                                         : <FontAwesomeIcon icon={faExclamationCircle} className="svg-red" />}
                                     <br />
                                 </span>)

@@ -99,42 +99,42 @@ const Metrics = (props) => {
                                         <table style={{ width: '100%', textAlign: 'center' }} className="greyGridTable"  >
                                             <thead>
                                                 <tr>
-                                                    <th>edad</th>
-                                                    <th>{item.age}</th>                                                                                       
+                                                    <th style={{textAlign:'right'}} >edad</th>
+                                                    <th style={{textAlign:'left'}} >{item.age}</th>                                                                                       
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td><b>altura</b></td>
-                                                    <td><b>{item.height}</b></td>                                                    
+                                                    <td style={{textAlign:'right'}} ><b>altura</b></td>
+                                                    <td style={{textAlign:'left'}} ><b>{item.height}</b></td>                                                    
                                                 </tr>
                                                 <tr>
-                                                    <td><b>peso</b></td>
-                                                    <td><b>{item.weight}</b></td>                                                    
+                                                    <td style={{textAlign:'right'}} ><b>peso</b></td>
+                                                    <td style={{textAlign:'left'}} ><b>{item.weight}</b></td>                                                    
                                                 </tr>    
                                                 <tr>
-                                                    <td><b>grasa</b></td>
-                                                    <td><b>{item.fat}</b></td>                                                    
+                                                    <td style={{textAlign:'right'}} ><b>grasa</b></td>
+                                                    <td style={{textAlign:'left'}} ><b>{item.fat}</b></td>                                                    
                                                 </tr>   
                                                 <tr>
-                                                    <td><b>bmi</b></td>
-                                                    <td><b>{item.ibm}</b></td>                                                    
+                                                    <td style={{textAlign:'right'}} ><b>bmi</b></td>
+                                                    <td style={{textAlign:'left'}} ><b>{item.ibm}</b></td>                                                    
                                                 </tr>  
                                                 <tr>
-                                                    <td><b>muscle</b></td>
-                                                    <td><b>{item.muscle}</b></td>                                                    
+                                                    <td style={{textAlign:'right'}} ><b>muscle</b></td>
+                                                    <td style={{textAlign:'left'}} ><b>{item.muscle}</b></td>                                                    
                                                 </tr>  
                                                 <tr>
-                                                    <td><b>metabolic age</b></td>
-                                                    <td><b>{item.ageMetabol}</b></td>                                                    
+                                                    <td style={{textAlign:'right'}} ><b>metabolic age</b></td>
+                                                    <td style={{textAlign:'left'}} ><b>{item.ageMetabol}</b></td>                                                    
                                                 </tr>   
                                                 <tr>
-                                                    <td><b>resting metabolism</b></td>
-                                                    <td><b>{item.restMetabol}</b></td>                                                    
+                                                    <td style={{textAlign:'right'}} ><b>resting metabolism</b></td>
+                                                    <td style={{textAlign:'left'}} ><b>{item.restMetabol}</b></td>                                                    
                                                 </tr>   
                                                 <tr>
-                                                    <td><b>Viseral</b></td>
-                                                    <td><b>{item.viseral}</b></td>                                                    
+                                                    <td style={{textAlign:'right'}} ><b>Viseral</b></td>
+                                                    <td style={{textAlign:'left'}} ><b>{item.viseral}</b></td>                                                    
                                                 </tr>   
 
                                             </tbody>
