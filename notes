@@ -14,6 +14,18 @@ when developing use
 
 
 
+
+
+https://fontawesome.com/icons/dumbbell?style=solid
+
+
+
+https://www.cleanpng.com/png-computer-icons-clip-art-scalable-vector-graphics-i-6825938/download-png.html
+
+
+
+
+
                 <img style={{borderRadius:'50px', width:'100px' }} src={props.match.params.id==="ale"?'./assets/images/profiles/ale.png':'./assets/images/profiles/balan.PNG'} alt="Avatar" /> 
 
 

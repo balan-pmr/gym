@@ -79,7 +79,8 @@ const Login = (props) => {
     return (
         <div style={{paddingBottom:'400px'}}>
             <Box>
-                <div style={{ textAlign: 'center', display: 'table' }} >
+                <div style={{ textAlign: 'center', display: 'grid' }} >                    
+                    <img src={process.env.REACT_APP_ROUTER_BASE+'/assets/images/gym/gym-login.png'}  alt="Login Icon" style={{width:'200px', margin:'5px' }}  />                      
                     <input type="password" onChange={event => setPwdValue(event.target.value)} value={pwdValue} style={{margin:'10px'}} /> 
                     {loading ? <span className="ml-button-disabled">INGRESAR</span> :
                         <a href="/" className="ml-button-primary" onClick={event => handleLogIn(event)}  > INGRESAR</a>

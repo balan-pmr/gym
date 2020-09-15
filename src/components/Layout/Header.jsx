@@ -31,7 +31,7 @@ const Header = forwardRef((props, ref) => {
 
             <Col span={4} style={{ textAlign: 'center' }}>
                 <Link to="/ref" >
-                    <img src='./assets/images/gym/gym.png' alt="Home Icon" style={{ width: '80px', margin: '15px 0 0px 0' }} />
+                    <img src={process.env.REACT_APP_ROUTER_BASE+'/assets/images/gym/gym.png'}  alt="Home Icon" style={{ width: '80px', margin: '15px 0 0px 0' }} />                 
                 </Link>
                 <p style={{ fontSize: '11px' }} > nosotros bien gorditos jiji  </p>
             </Col>

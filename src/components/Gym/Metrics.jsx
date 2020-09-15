@@ -13,14 +13,13 @@ import Message from '../Generic/Message';
 import AddNewRecord from '../Gym/AddNewRecord';
 import moment from 'moment';
 import 'moment/locale/es';
-import ReferencesModal from '../Generic/Modals/ReferencesModal';
+import References from './References';
 
 const Metrics = (props) => {
 
     const [records, setRecords] = useState([]);
     const refMessageInfo = useRef();
     const recordRef = useRef(null);
-    const referencesModalRef = useRef(null);
     const [show, setShow] = useState(false);
 
     // onMountComponnet
@@ -53,10 +52,6 @@ const Metrics = (props) => {
         recordRef.current.showModal();
     }
 
-    function handleShowReferences(){
-        referencesModalRef.current.showModal();
-    }
-
     const dateStyle = {
             backgroundColor: 'ghostwhite',
             margin: '-7px 5px 15px',
@@ -73,10 +68,10 @@ const Metrics = (props) => {
             
             <AddNewRecord ref={recordRef}  id={props.match.params.id} />
             
-            <ReferencesModal ref={referencesModalRef} />
-
             <Message ref={refMessageInfo} typeMessage="info" />
-            <Box>
+
+            <Box display="table-cell"   >
+                
                 <div style={{textAlign:'center'}}>
                 
                 {
@@ -87,68 +82,72 @@ const Metrics = (props) => {
                 }
                 
                 <br/>
+
                 { records.length > 0 && show ? 
                     <div>
                         <span style={{marginRight: '6px'}} className="ml-button-primary" onClick={event => handleNewRecord(event)}  > Nuevo registro </span> 
-                        <span className="ml-button-primary" onClick={event => handleShowReferences(event)}  > Referencias </span> 
                     </div>
-                    : <span></span>}
+                    : <span></span>
+                }
+
                 </div>
                 {show && records.map(
                         (item, index) => {
                             return (
-                                <span key={index} >
-                                    <Box justify="center">
+                                    <Box display="table-cell" key={index} >
                                         <div style={dateStyle}> {( moment(item.date.substring(0,10)).locale('es') ).format('LL')}  </div>
                                         <table style={{ width: '100%', textAlign: 'center' }} className="greyGridTable"  >
                                             <thead>
                                                 <tr>
-                                                    <th>edad</th>
-                                                    <th>{item.age}</th>                                                                                       
+                                                    <th style={{textAlign:'right'}} >edad</th>
+                                                    <th style={{textAlign:'left'}} >{item.age}</th>                                                                                       
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td><b>altura</b></td>
-                                                    <td><b>{item.height}</b></td>                                                    
+                                                    <td style={{textAlign:'right'}} ><b>altura</b></td>
+                                                    <td style={{textAlign:'left'}} ><b>{item.height}</b></td>                                                    
                                                 </tr>
                                                 <tr>
-                                                    <td><b>peso</b></td>
-                                                    <td><b>{item.weight}</b></td>                                                    
+                                                    <td style={{textAlign:'right'}} ><b>peso</b></td>
+                                                    <td style={{textAlign:'left'}} ><b>{item.weight}</b></td>                                                    
                                                 </tr>    
                                                 <tr>
-                                                    <td><b>grasa</b></td>
-                                                    <td><b>{item.fat}</b></td>                                                    
+                                                    <td style={{textAlign:'right'}} ><b>grasa</b></td>
+                                                    <td style={{textAlign:'left'}} ><b>{item.fat}</b></td>                                                    
                                                 </tr>   
                                                 <tr>
-                                                    <td><b>bmi</b></td>
-                                                    <td><b>{item.ibm}</b></td>                                                    
+                                                    <td style={{textAlign:'right'}} ><b>bmi</b></td>
+                                                    <td style={{textAlign:'left'}} ><b>{item.ibm}</b></td>                                                    
                                                 </tr>  
                                                 <tr>
-                                                    <td><b>muscle</b></td>
-                                                    <td><b>{item.muscle}</b></td>                                                    
+                                                    <td style={{textAlign:'right'}} ><b>muscle</b></td>
+                                                    <td style={{textAlign:'left'}} ><b>{item.muscle}</b></td>                                                    
                                                 </tr>  
                                                 <tr>
-                                                    <td><b>metabolic age</b></td>
-                                                    <td><b>{item.ageMetabol}</b></td>                                                    
+                                                    <td style={{textAlign:'right'}} ><b>metabolic age</b></td>
+                                                    <td style={{textAlign:'left'}} ><b>{item.ageMetabol}</b></td>                                                    
                                                 </tr>   
                                                 <tr>
-                                                    <td><b>resting metabolism</b></td>
-                                                    <td><b>{item.restMetabol}</b></td>                                                    
+                                                    <td style={{textAlign:'right'}} ><b>resting metabolism</b></td>
+                                                    <td style={{textAlign:'left'}} ><b>{item.restMetabol}</b></td>                                                    
                                                 </tr>   
                                                 <tr>
-                                                    <td><b>Viseral</b></td>
-                                                    <td><b>{item.viseral}</b></td>                                                    
+                                                    <td style={{textAlign:'right'}} ><b>Viseral</b></td>
+                                                    <td style={{textAlign:'left'}} ><b>{item.viseral}</b></td>                                                    
                                                 </tr>   
 
                                             </tbody>
                                         </table>
                                     </Box>
-                                </span>
                             );
                         })
                 }
             </Box>
+            <br/>
+            
+            {show && <References/>}
+
         </div>
     );    
 
