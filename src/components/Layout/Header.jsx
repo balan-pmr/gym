@@ -65,6 +65,16 @@ const Header = forwardRef((props, ref) => {
                                 </Link>
                             </li>
                         }
+                        {Auth.getLogginStatus()
+                            &&
+                            <li>
+                                <Link to={`/metrics/alemartinez`}   >
+                                    <span className="ml-link" >
+                                        Ale Martinez
+                                    </span>
+                                </Link>
+                            </li>
+                        }                        
                     </ul>
                 </nav>
 
