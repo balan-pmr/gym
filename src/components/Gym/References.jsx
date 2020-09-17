@@ -58,7 +58,7 @@ const References = (props) => {
                         </tr>
                         <tr>
                             <td><b>MALE</b></td>
-                            <td><b>20-29</b></td>
+                            <td><b>20-39</b></td>
                             <td>&#60; 8.0</td>
                             <td>8.0 - 19.9</td>
                             <td>20.0 - 24.9</td>
