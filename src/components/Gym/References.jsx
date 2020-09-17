@@ -33,15 +33,15 @@ const References = (props) => {
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Female</td>
-                            <td><b>20-29</b></td>
+                            <td><b>FEMALE</b></td>
+                            <td><b>20-39</b></td>
                             <td>&#60; 21.0</td>
                             <td>21.0 - 32.9</td>
                             <td>33.0 - 38.9</td>
                             <td>&#62;&#61; 39.0</td>
                         </tr>
                         <tr>
-                            <td>Female</td>
+                            <td><b>FEMALE</b></td>
                             <td><b>40-59</b></td>
                             <td>&#60; 23.0</td>
                             <td>23.0 - 33.9</td>
@@ -49,7 +49,7 @@ const References = (props) => {
                             <td>&#62;&#61; 40.0</td>
                         </tr>
                         <tr>
-                            <td>Female</td>
+                            <td><b>FEMALE</b></td>
                             <td><b>60-79</b></td>
                             <td>&#60; 24.0</td>
                             <td>24.0 - 35.9</td>
@@ -57,7 +57,7 @@ const References = (props) => {
                             <td>&#62;&#61; 42.0</td>
                         </tr>
                         <tr>
-                            <td>Male</td>
+                            <td><b>MALE</b></td>
                             <td><b>20-29</b></td>
                             <td>&#60; 8.0</td>
                             <td>8.0 - 19.9</td>
@@ -65,7 +65,7 @@ const References = (props) => {
                             <td>&#62;&#61; 25.0</td>
                         </tr>
                         <tr>
-                            <td>Male</td>
+                            <td><b>MALE</b></td>
                             <td><b>40-59</b></td>
                             <td>&#60; 11.0</td>
                             <td>11.0 - 21.9</td>
@@ -73,7 +73,7 @@ const References = (props) => {
                             <td>&#62;&#61; 28.0</td>
                         </tr>
                         <tr>
-                            <td>Male</td>
+                            <td><b>MALE</b></td>
                             <td><b>60-79</b></td>
                             <td>&#60; 13.0</td>
                             <td>13.0 - 24.9</td>
@@ -125,15 +125,15 @@ const References = (props) => {
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Female</td>
-                            <td><b>18-34</b></td>
+                            <td><b>FEMALE</b></td>
+                            <td><b>18-39</b></td>
                             <td>&#60; 24.3</td>
                             <td>24.3 - 30.3</td>
                             <td>30.4 - 35.3</td>
                             <td>&#62;&#61; 35.4</td>
                         </tr>
                         <tr>
-                            <td>Female</td>
+                            <td><b>FEMALE</b></td>
                             <td><b>40-59</b></td>
                             <td>&#60; 24.1</td>
                             <td>24.1 - 30.1</td>
@@ -141,7 +141,7 @@ const References = (props) => {
                             <td>&#62;&#61; 35.2</td>
                         </tr>
                         <tr>
-                            <td>Female</td>
+                            <td><b>FEMALE</b></td>
                             <td><b>60-80</b></td>
                             <td>&#60; 23.9</td>
                             <td>23.9 - 29.9</td>
@@ -149,7 +149,7 @@ const References = (props) => {
                             <td>&#62;&#61; 35.0</td>
                         </tr>
                         <tr>
-                            <td>Male</td>
+                            <td><b>MALE</b></td>
                             <td><b>18-39</b></td>
                             <td>&#60; 33.3</td>
                             <td>33.3 - 39.3</td>
@@ -157,7 +157,7 @@ const References = (props) => {
                             <td>&#62;&#61; 44.1</td>
                         </tr>
                         <tr>
-                            <td>Male</td>
+                            <td><b>MALE</b></td>
                             <td><b>40-59</b></td>
                             <td>&#60; 33.1</td>
                             <td>33.1 - 39.1</td>
@@ -165,7 +165,7 @@ const References = (props) => {
                             <td>&#62;&#61; 43.9</td>
                         </tr>
                         <tr>
-                            <td>Male</td>
+                            <td><b>MALE</b></td>
                             <td><b>60-80</b></td>
                             <td>&#60; 32.9</td>
                             <td>32.9 - 38.9</td>
