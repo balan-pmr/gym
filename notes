@@ -16,6 +16,45 @@ when developing use
 
 
 
+
+                        {Auth.getLogginStatus()
+                            &&
+                            <li>
+                                <Link  to={`/metrics/ale`}  >
+                                    <span className="ml-link" >
+                                        Ale
+                                    </span>
+                                </Link>
+                            </li>
+                        }
+                        {Auth.getLogginStatus()
+                            &&
+                            <li>
+                                <Link to={`/metrics/balan`}   >
+                                    <span className="ml-link" >
+                                        Balan
+                                    </span>
+                                </Link>
+                            </li>
+                        }
+                        {Auth.getLogginStatus()
+                            &&
+                            <li>
+                                <Link to={`/metrics/alemartinez`}   >
+                                    <span className="ml-link" >
+                                        Ale Martinez
+                                    </span>
+                                </Link>
+                            </li>
+                        }       
+
+                        
+
+
+
+
+
+
 https://fontawesome.com/icons/dumbbell?style=solid
 
 

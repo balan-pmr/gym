@@ -38,6 +38,7 @@ const Header = forwardRef((props, ref) => {
             <Col span={4} style={{ textAlign: 'left' }}>
                 <nav>
                     <ul>
+
                         <li>
                             <Link to="/ref" >
                                 <span className="ml-link" >
@@ -45,36 +46,24 @@ const Header = forwardRef((props, ref) => {
                                  </span>
                             </Link>
                         </li>
-                        {Auth.getLogginStatus()
-                            &&
+
+                        {
+                         Auth.getLogginStatus()
+                         &&
+                         process.env.REACT_APP_LIST_OF_MEMBERS.split(",").map((item, i) => {
+                            return (
                             <li>
-                                <Link  to={`/metrics/ale`}  >
+                                <Link  key={i} to={'/metrics/'+item}  >
                                     <span className="ml-link" >
-                                        Ale
+                                        {item}
                                     </span>
                                 </Link>
-                            </li>
+                            </li>                                                        
+                            );
+                          })
                         }
-                        {Auth.getLogginStatus()
-                            &&
-                            <li>
-                                <Link to={`/metrics/balan`}   >
-                                    <span className="ml-link" >
-                                        Balan
-                                    </span>
-                                </Link>
-                            </li>
-                        }
-                        {Auth.getLogginStatus()
-                            &&
-                            <li>
-                                <Link to={`/metrics/alemartinez`}   >
-                                    <span className="ml-link" >
-                                        Ale Martinez
-                                    </span>
-                                </Link>
-                            </li>
-                        }                        
+
+
                     </ul>
                 </nav>
 

@@ -81,7 +81,10 @@ const Metrics = (props) => {
                     props.match.params.id ==="balan"?
                     <img style={{borderRadius:'50px', width:'100px' }} src={process.env.REACT_APP_ROUTER_BASE+'/assets/images/profiles/balan.PNG'} alt="Avatar" /> 
                     :
+                    props.match.params.id ==="alemartinez"?
                     <img style={{borderRadius:'50px', width:'100px' }} src={process.env.REACT_APP_ROUTER_BASE+'/assets/images/profiles/alemartinez.PNG'} alt="Avatar" /> 
+                    :
+                    <img style={{borderRadius:'50px', width:'100px' }} src={process.env.REACT_APP_ROUTER_BASE+'/assets/images/gym/gym-login.png'} alt="Avatar" />                     
                 }
                 
                 <br/>
