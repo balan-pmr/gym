@@ -1,0 +1,28 @@
+
+/*
+https://css-tricks.com/stripes-css/
+*/
+
+.module {
+    background: white;
+    /*border: 1px solid #ccc; */
+    margin: 3%;
+     h2 {
+      padding: 1rem;
+      margin: 0 0 0.5rem 0;
+    }
+    > p {
+      padding: 0 1rem;
+    }
+  }
+  
+  .stripe-7 {
+    /* color: white; */
+    background: repeating-radial-gradient(
+      circle,
+      rgb(69, 179, 157),
+      rgb(69, 179, 157) 10px,
+      rgb(50, 116, 105) 10px, 
+      rgb(50, 116, 105) 40px
+    );
+  }

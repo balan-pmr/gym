@@ -70,26 +70,30 @@ const Metrics = (props) => {
             
             <Message ref={refMessageInfo} typeMessage="info" />
 
-            <Box display="table-cell"   >
-                
-                <div style={{textAlign:'center'}}>
+        
+        { show &&
+        
+            <Box display="table-cell" style={{padding: '10px'}}  >
+                <div className="module" style={{textAlign:'center', inlineSize:"max-content"}} >
+                    <h2 class="stripe-7">
+                    <span style={{backgroundColor:"white", borderRadius:"12px", padding:"2px"}} >    {props.match.params.id} </span> 
+                    </h2>
                 
                 {
-                    props.match.params.id ==="ale"?
+                    props.match.params.id ==="ale" && show?
                     <img style={{borderRadius:'50px', width:'100px' }} src={process.env.REACT_APP_ROUTER_BASE+'/assets/images/profiles/ale.png'} alt="Avatar" />                     
                     :
-                    props.match.params.id ==="balan"?
+                    props.match.params.id ==="balan" && show ?
                     <img style={{borderRadius:'50px', width:'100px' }} src={process.env.REACT_APP_ROUTER_BASE+'/assets/images/profiles/balan.PNG'} alt="Avatar" /> 
                     :
-                    props.match.params.id ==="alemartinez"?
+                    props.match.params.id ==="alemartinez" && show ?
                     <img style={{borderRadius:'50px', width:'100px' }} src={process.env.REACT_APP_ROUTER_BASE+'/assets/images/profiles/alemartinez.PNG'} alt="Avatar" /> 
                     :
                     <img style={{borderRadius:'50px', width:'100px' }} src={process.env.REACT_APP_ROUTER_BASE+'/assets/images/gym/gym-login.png'} alt="Avatar" />                     
                 }
-                
                 <br/>
-
                 { records.length > 0 && show ? 
+                    
                     <div>
                         <span style={{marginRight: '6px'}} className="ml-button-primary" onClick={event => handleNewRecord(event)}  > Nuevo registro </span> 
                     </div>
@@ -97,6 +101,13 @@ const Metrics = (props) => {
                 }
 
                 </div>
+            </Box>
+        }
+
+
+    { show &&
+            <Box display="table-cell"   >
+                
                 {show && records.map(
                         (item, index) => {
                             return (
@@ -150,6 +161,7 @@ const Metrics = (props) => {
                         })
                 }
             </Box>
+        }
             <br/>
             
             {show && <References/>}
