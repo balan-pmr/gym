@@ -20,9 +20,9 @@ const References = (props) => {
     const colorBmi = { backgroundColor:"#ff748c" , color:"white"};
 
     return (
-        <div style={{}} >
-        <Box display="table-cell"  > 
-
+        <div    >
+        <Box className="box" display="table-cell"    > 
+        
             <Box display={display}  >
                 <h3 style={colorFat} >Body Fat Percentege (grasa en cuerpo)</h3>
                 <table style={{ width: '100%', textAlign: 'center' }} className="greyGridTable"  >
@@ -39,7 +39,7 @@ const References = (props) => {
                     <tbody>
                         { ( (  props.age === undefined || (props.age >=10 && props.age <=39)   ) && (props.gender==="FEMALE" || props.gender===undefined ) ) && 
                         <tr>
-                            <td><b>FEMALE</b></td>
+                            <td><b>MUJER</b></td>
                             <td><b>20-39</b></td>
                             <td style={ props.lastFat<21? colorFat : {} }                            >&#60; 21.0</td>
                             <td style={ props.lastFat>=21 && props.lastFat<=32.9 ? colorFat: {} }    >21.0 - 32.9</td>
@@ -48,7 +48,7 @@ const References = (props) => {
                         </tr> }
                         { ( ( props.age === undefined || (props.age >=40 && props.age <=59)   ) && (props.gender==="FEMALE" || props.gender===undefined ) )  && 
                         <tr>
-                            <td><b>FEMALE</b></td>
+                            <td><b>MUJER</b></td>
                             <td><b>40-59</b></td>
                             <td style={ props.lastFat<23? colorFat : {} }                          >&#60; 23.0</td>
                             <td style={ props.lastFat>=23.0 && props.lastFat<=33.9 ? colorFat: {} }  >23.0 - 33.9</td>
@@ -57,7 +57,7 @@ const References = (props) => {
                         </tr> }
                         { ( (  props.age === undefined  || (props.age >=60 && props.age <=79)  ) && (props.gender==="FEMALE" || props.gender===undefined ) ) && 
                         <tr>
-                            <td><b>FEMALE</b></td>
+                            <td><b>MUJER</b></td>
                             <td><b>60-79</b></td>
                             <td style={ props.lastFat<24? colorFat : {} }                            >&#60; 24.0</td>
                             <td style={ props.lastFat>=24.0 && props.lastFat<=35.9 ? colorFat: {} }  >24.0 - 35.9</td>
@@ -66,7 +66,7 @@ const References = (props) => {
                         </tr> }
                         { ( (  props.age === undefined || (props.age >=10 && props.age <=39)  ) && (props.gender==="MALE" || props.gender===undefined ) ) && 
                         <tr>
-                            <td><b>MALE</b></td>
+                            <td><b>HOMBRE</b></td>
                             <td><b>20-39</b></td>
                             <td style={ props.lastFat<8.0? colorFat : {} }                            >&#60; 8.0</td>
                             <td style={ props.lastFat>=8.0 && props.lastFat<=19.9 ? colorFat: {} }    >8.0 - 19.9</td>
@@ -75,7 +75,7 @@ const References = (props) => {
                         </tr>  }
                         {  ( ( props.age === undefined  || (props.age >=40 && props.age <=59)  ) && (props.gender==="MALE" || props.gender===undefined ) ) && 
                         <tr>
-                            <td><b>MALE</b></td>
+                            <td><b>HOMBRE</b></td>
                             <td><b>40-59</b></td>
                             <td style={ props.lastFat<11.0? colorFat : {} }                           >&#60; 11.0</td>
                             <td style={ props.lastFat>=11.0 && props.lastFat<=21.9 ? colorFat: {} }   >11.0 - 21.9</td>
@@ -84,7 +84,7 @@ const References = (props) => {
                         </tr> }
                         {  ( ( props.age === undefined || (props.age >=60 && props.age <=79)   ) && (props.gender==="MALE" || props.gender===undefined ) )  && 
                         <tr>
-                            <td><b>MALE</b></td>
+                            <td><b>HOMBRE</b></td>
                             <td><b>60-79</b></td>
                             <td style={ props.lastFat<13.0? colorFat : {} }                          >&#60; 13.0</td>
                             <td style={ props.lastFat>=13.0 && props.lastFat<=24.9 ? colorFat: {} }  >13.0 - 24.9</td>
@@ -111,7 +111,7 @@ const References = (props) => {
                     <tbody>
                         { ( ( props.age === undefined || (props.age >=10 && props.age <=39)   ) && (props.gender==="FEMALE" || props.gender===undefined ) )  && 
                         <tr>
-                            <td><b>FEMALE</b></td>
+                            <td><b>MUJER</b></td>
                             <td><b>18-39</b></td>
                             <td style={ props.lastMuscle<24.3? colorMuscle : {} }                              >&#60; 24.3</td>
                             <td style={ props.lastMuscle>=24.3 && props.lastMuscle<=30.3 ? colorMuscle: {} }   >24.3 - 30.3</td>
@@ -120,7 +120,7 @@ const References = (props) => {
                         </tr> }
                         { ( ( props.age === undefined || (props.age >=40 && props.age <=59)   ) && (props.gender==="FEMALE" || props.gender===undefined ) )  && 
                         <tr>
-                            <td><b>FEMALE</b></td>
+                            <td><b>MUJER</b></td>
                             <td><b>40-59</b></td>
                             <td style={ props.lastMuscle<24.1? colorMuscle : {} }                              >&#60; 24.1</td>
                             <td style={ props.lastMuscle>=24.1 && props.lastMuscle<=30.1 ? colorMuscle: {} }   >24.1 - 30.1</td>
@@ -129,7 +129,7 @@ const References = (props) => {
                         </tr> }
                         { ( ( props.age === undefined || (props.age >=60 && props.age <=80)   ) && (props.gender==="FEMALE" || props.gender===undefined ) ) && 
                         <tr>
-                            <td><b>FEMALE</b></td>
+                            <td><b>MUJER</b></td>
                             <td><b>60-80</b></td>
                             <td style={ props.lastMuscle<23.9? colorMuscle : {} }                             >&#60; 23.9</td>
                             <td style={ props.lastMuscle>=23.9 && props.lastMuscle<=39.9 ? colorMuscle: {} }  >23.9 - 29.9</td>
@@ -138,7 +138,7 @@ const References = (props) => {
                         </tr> }
                         { ( ( props.age === undefined || (props.age >=10 && props.age <=39)   ) && (props.gender==="MALE" || props.gender===undefined ) )  && 
                         <tr>
-                            <td><b>MALE</b></td>
+                            <td><b>HOMBRE</b></td>
                             <td><b>18-39</b></td>
                             <td style={ props.lastMuscle<33.3? colorMuscle : {} }                         >&#60; 33.3</td>
                             <td style={ props.lastMuscle>=33.3 && props.lastMuscle<=39.3 ? colorMuscle: {} }  >33.3 - 39.3</td>
@@ -147,7 +147,7 @@ const References = (props) => {
                         </tr> }
                         {( ( props.age === undefined || (props.age >=40 && props.age <=59)   ) && (props.gender==="MALE" || props.gender===undefined ) )  && 
                         <tr>
-                            <td><b>MALE</b></td>
+                            <td><b>HOMBRE</b></td>
                             <td><b>40-59</b></td>
                             <td style={ props.lastMuscle<33.1? colorMuscle : {} }                     >&#60; 33.1</td>
                             <td style={ props.lastMuscle>=33.1 && props.lastMuscle<=39.1 ? colorMuscle: {} }  >33.1 - 39.1</td>
@@ -156,7 +156,7 @@ const References = (props) => {
                         </tr> }
                         { ( ( props.age === undefined || (props.age >=60 && props.age <=80)   ) && (props.gender==="MALE" || props.gender===undefined ) ) && 
                         <tr>
-                            <td><b>MALE</b></td>
+                            <td><b>HOMBRE</b></td>
                             <td><b>60-80</b></td>
                             <td style={ props.lastMuscle<32.9? colorMuscle : {} }      >&#60; 32.9</td>
                             <td style={ props.lastMuscle>=32.9 && props.lastMuscle<=38.9 ? colorMuscle: {} }  >32.9 - 38.9</td>
@@ -166,6 +166,8 @@ const References = (props) => {
                     </tbody>
                 </table>
             </Box>
+
+            <br/>
 
             <Box display={display} >
                 <h3 style={colorViseral} >Viceral Fat Level (grasa en intestinos)</h3>

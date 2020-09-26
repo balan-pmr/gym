@@ -13,11 +13,18 @@ import { useState } from 'react';
 import { forwardRef, useImperativeHandle } from 'react';
 import { Link } from 'react-router-dom';
 import Auth from '../Authentication/Authentication';
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
+import { useHistory } from "react-router-dom";
+
 
 const Header = forwardRef((props, ref) => {
 
+    let history = useHistory();
     const [logged, setLogged] = useState(false);
     const [uid, setUid] = useState('');
+    const defaultValueForDropdown = { 'value': '0', 'label':'Seleccione un registro'};
+    const [valueSourceSystem] = useState(defaultValueForDropdown);
 
     useImperativeHandle(ref, () => ({
         updateLogged(uid) {
@@ -46,21 +53,17 @@ const Header = forwardRef((props, ref) => {
                                  </span>
                             </Link>
                         </li>
-
+                        
                         {
                          Auth.getLogginStatus()
                          &&
-                         process.env.REACT_APP_LIST_OF_MEMBERS.split(",").map((item, i) => {
-                            return (
-                            <li key={i} >
-                                <Link  key={i} to={'/metrics/'+item}  >
-                                    <span key={i} className="ml-link" >
-                                        {item}
-                                    </span>
-                                </Link>
-                            </li>                                                        
-                            );
-                          })
+                         // ale,balan,alemartinez,paula,uriel,gibran,juan
+                        <Dropdown
+                                className="ml-form-dropdown"
+                                options={[{'value': 'ale'},{'value': 'balan'},{'value': 'alemartinez'},{'value': 'paula'},{'value': 'uriel'},{'value': 'gibran'},{'value': 'juan'}]}
+                                value={valueSourceSystem}
+                                onChange={event => { console.log('event is ', event); history.push("/metrics/"+event.value);   }}
+                        />
                         }
 
 
@@ -74,7 +77,7 @@ const Header = forwardRef((props, ref) => {
                 :
                 <Col span={4}>
                     <Link to="/" >
-                        <span className="ml-link" style={{marginTop:'60px', backgroundColor: 'black' }} >
+                        <span className="ml-link" style={{marginTop:'60px', backgroundColor: 'floralwhite', color:'black' }} >
                         &nbsp;Iniciar&nbsp;
                         </span>
                     </Link>

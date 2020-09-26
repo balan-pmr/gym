@@ -13,6 +13,38 @@ when developing use
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+                        {
+                         Auth.getLogginStatus()
+                         &&
+                         process.env.REACT_APP_LIST_OF_MEMBERS.split(",").map((item, i) => {
+                            return (
+                            <li key={i} >
+                                <Link  key={i} to={'/metrics/'+item}  >
+                                    <span key={i} className="ml-link" >
+                                        {item}
+                                    </span>
+                                </Link>
+                            </li>                                                        
+                            );
+                          })
+                        }
+
+
+                        
+
+
+
                             {lowFat?    <th style={{backgroundColor:"crimson", color:"white"}}>-(Low)</th>        :  <th>-(Low)</th> }
                             {normalFat? <th style={{backgroundColor:"crimson", color:"white"}}>0 (Normal)</th>    : <th>0 (Normal)</th>}
                             {highFat?   <th style={{backgroundColor:"crimson", color:"white"}}>+ (High)</th>      : <th>+ (High)</th>}
