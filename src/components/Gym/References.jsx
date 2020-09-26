@@ -17,9 +17,9 @@ const References = (props) => {
 
     return (
         <div style={{}} >
-        <Box display="table-cell" > 
-            <Box display={display} >
-                <h2>Body Fat Percentege</h2>
+        <Box display="table-cell"  > 
+            <Box display={display}  >
+                <h2 style={{backgroundColor:"crimson", color:"white"}} >Body Fat Percentege (grasa en cuerpo)</h2>
                 <table style={{ width: '100%', textAlign: 'center' }} className="greyGridTable"  >
                     <thead>
                         <tr>
@@ -85,7 +85,7 @@ const References = (props) => {
             </Box>
 
             <Box display={display} >
-                <h2>Viceral Fat Level</h2>
+                <h2 style={{backgroundColor:"blueviolet", color:"white"}} >Viceral Fat Level (grasa en intestinos)</h2>
                 <table style={{ width: '100%', textAlign: 'center' }} className="greyGridTable"  >
                     <thead>
                         <tr>
@@ -111,7 +111,7 @@ const References = (props) => {
             </Box>
 
             <Box  display={display} >
-                <h2>Skeletal Muscle Percentege </h2>
+                <h2 style={{backgroundColor:"darkorange", color: "white"}} >Skeletal Muscle Percentege (musculo)</h2>
                 <table style={{ width: '100%', textAlign: 'center' }} className="greyGridTable"  >
                     <thead>
                         <tr>
@@ -177,7 +177,7 @@ const References = (props) => {
             </Box>
 
             <Box  display={display} >
-                <h2>BMI</h2>
+                <h2 style={{ backgroundColor:"#ff748c" , color:"white"}} >BMI</h2>
                 <table style={{ width: '100%', textAlign: 'center' }} className="greyGridTable"  >
                     <thead>
                         <tr>

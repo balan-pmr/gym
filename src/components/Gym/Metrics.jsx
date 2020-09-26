@@ -75,7 +75,7 @@ const Metrics = (props) => {
         
             <Box display="table-cell" style={{padding: '10px'}}  >
                 <div className="module" style={{textAlign:'center', inlineSize:"max-content"}} >
-                    <h2 class="stripe-7">
+                    <h2 >
                     <span style={{backgroundColor:"white", borderRadius:"12px", padding:"2px"}} >    {props.match.params.id} </span> 
                     </h2>
                 
@@ -130,27 +130,27 @@ const Metrics = (props) => {
                                                     <td style={{textAlign:'left'}} ><b>{item.weight}</b></td>                                                    
                                                 </tr>    
                                                 <tr>
-                                                    <td style={{textAlign:'right'}} ><b>grasa</b></td>
+                                                    <td style={{textAlign:'right',  backgroundColor:"crimson", color:"white"}} ><b>grasa en cuerpo</b></td>
                                                     <td style={{textAlign:'left'}} ><b>{item.fat}</b></td>                                                    
                                                 </tr>   
                                                 <tr>
-                                                    <td style={{textAlign:'right'}} ><b>bmi</b></td>
+                                                    <td style={{textAlign:'right', backgroundColor:"#ff748c", color:"white" }} ><b>bmi</b></td>
                                                     <td style={{textAlign:'left'}} ><b>{item.ibm}</b></td>                                                    
                                                 </tr>  
                                                 <tr>
-                                                    <td style={{textAlign:'right'}} ><b>muscle</b></td>
+                                                    <td style={{textAlign:'right', backgroundColor:"darkorange" , color:"white"}}   ><b>musculo</b></td>
                                                     <td style={{textAlign:'left'}} ><b>{item.muscle}</b></td>                                                    
                                                 </tr>  
                                                 <tr>
-                                                    <td style={{textAlign:'right'}} ><b>metabolic age</b></td>
+                                                    <td style={{textAlign:'right'}} ><b>edad metabolica</b></td>
                                                     <td style={{textAlign:'left'}} ><b>{item.ageMetabol}</b></td>                                                    
                                                 </tr>   
                                                 <tr>
-                                                    <td style={{textAlign:'right'}} ><b>resting metabolism</b></td>
+                                                    <td style={{textAlign:'right'}} ><b>metabolismo</b></td>
                                                     <td style={{textAlign:'left'}} ><b>{item.restMetabol}</b></td>                                                    
                                                 </tr>   
                                                 <tr>
-                                                    <td style={{textAlign:'right'}} ><b>Viseral</b></td>
+                                                    <td style={{textAlign:'right', backgroundColor:"blueviolet" , color:"white"}} ><b>grasa en intestinos</b></td>
                                                     <td style={{textAlign:'left'}} ><b>{item.viseral}</b></td>                                                    
                                                 </tr>   
 
