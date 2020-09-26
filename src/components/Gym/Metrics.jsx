@@ -21,6 +21,14 @@ const Metrics = (props) => {
     const refMessageInfo = useRef();
     const recordRef = useRef(null);
     const [show, setShow] = useState(false);
+    const [gender, setGender] = useState("");
+    const [age, setAge] = useState(0);
+    const [lastFat, setLastFat] = useState(0);
+    const [lastMuscle, setLastMuscle] = useState(0);
+    const [lastViseral, setLastViseral] = useState(0);
+    const [lastBmi, setLastBmi ] = useState(0);
+    
+    
 
     // onMountComponnet
     useEffect( () => {
@@ -32,9 +40,15 @@ const Metrics = (props) => {
                 .then(res => res.json())
                 .then(
                     (result) => {
-                        console.log('result is', result)
+                        console.log('result is', result, 'size: ', result.length)
                         setRecords(result);
                         setShow(true);
+                        setGender(result[0].gender);
+                        setAge(result[0].age);
+                        setLastFat(result[0].fat);
+                        setLastMuscle(result[0].muscle);
+                        setLastViseral(result[0].viseral);
+                        setLastBmi(result[0].ibm);
                     },
                     (error) => {
                         let errorString =String(error);
@@ -128,19 +142,7 @@ const Metrics = (props) => {
                                                 <tr>
                                                     <td style={{textAlign:'right'}} ><b>peso</b></td>
                                                     <td style={{textAlign:'left'}} ><b>{item.weight}</b></td>                                                    
-                                                </tr>    
-                                                <tr>
-                                                    <td style={{textAlign:'right',  backgroundColor:"crimson", color:"white"}} ><b>grasa en cuerpo</b></td>
-                                                    <td style={{textAlign:'left'}} ><b>{item.fat}</b></td>                                                    
-                                                </tr>   
-                                                <tr>
-                                                    <td style={{textAlign:'right', backgroundColor:"#ff748c", color:"white" }} ><b>bmi</b></td>
-                                                    <td style={{textAlign:'left'}} ><b>{item.ibm}</b></td>                                                    
-                                                </tr>  
-                                                <tr>
-                                                    <td style={{textAlign:'right', backgroundColor:"darkorange" , color:"white"}}   ><b>musculo</b></td>
-                                                    <td style={{textAlign:'left'}} ><b>{item.muscle}</b></td>                                                    
-                                                </tr>  
+                                                </tr>      
                                                 <tr>
                                                     <td style={{textAlign:'right'}} ><b>edad metabolica</b></td>
                                                     <td style={{textAlign:'left'}} ><b>{item.ageMetabol}</b></td>                                                    
@@ -148,12 +150,23 @@ const Metrics = (props) => {
                                                 <tr>
                                                     <td style={{textAlign:'right'}} ><b>metabolismo</b></td>
                                                     <td style={{textAlign:'left'}} ><b>{item.restMetabol}</b></td>                                                    
-                                                </tr>   
+                                                </tr>                                                   
+                                                <tr>
+                                                    <td style={{textAlign:'right',  backgroundColor:"crimson", color:"white"}} ><b>grasa en cuerpo</b></td>
+                                                    <td style={{textAlign:'left',   border: '2px solid crimson'  }} ><b>{item.fat}</b></td>                                                    
+                                                </tr>                                                  
+                                                <tr>
+                                                    <td style={{textAlign:'right', backgroundColor:"darkorange" , color:"white"}}   ><b>musculo</b></td>
+                                                    <td style={{textAlign:'left', border: '2px solid darkorange' }} ><b>{item.muscle}</b></td>                                                    
+                                                </tr>  
                                                 <tr>
                                                     <td style={{textAlign:'right', backgroundColor:"blueviolet" , color:"white"}} ><b>grasa en intestinos</b></td>
-                                                    <td style={{textAlign:'left'}} ><b>{item.viseral}</b></td>                                                    
-                                                </tr>   
-
+                                                    <td style={{textAlign:'left', border: '2px solid blueviolet'}} ><b>{item.viseral}</b></td>                                                    
+                                                </tr> 
+                                                <tr>
+                                                    <td style={{textAlign:'right', backgroundColor:"#ff748c", color:"white" }} ><b>bmi</b></td>
+                                                    <td style={{textAlign:'left', border: '2px solid #ff748c'}} ><b>{item.ibm}</b></td>                                                    
+                                                </tr>                                                                                                   
                                             </tbody>
                                         </table>
                                     </Box>
@@ -164,7 +177,16 @@ const Metrics = (props) => {
         }
             <br/>
             
-            {show && <References/>}
+            { show && 
+             < References 
+               age={age} 
+               gender={gender} 
+               lastFat={lastFat}
+               lastMuscle={lastMuscle}
+               lastViseral={lastViseral}
+               lastBmi={lastBmi}
+             />
+            }
 
         </div>
     );    

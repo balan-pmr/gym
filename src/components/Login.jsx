@@ -33,13 +33,13 @@ const Login = (props) => {
     function localLogin(){
         console.log('local logging')
         Auth.onAuthentication('');
-        props.headerRef.current.updateLogged('');
+        props.headerRef.current.updateLogged('');/*
         let minutesForActiveSession = parseInt(process.env.REACT_APP_MODAL_SESSION_ACTIVE_MINUTES);
         let timeForActiveSession = 1000 * 60 * minutesForActiveSession;
         setTimeout(() => { 
             props.modalSessionRef.current.showModal();
             Auth.onLogout(); 
-        }, timeForActiveSession);
+        }, timeForActiveSession);*/
         history.push("/ref");        
     }
 
@@ -56,13 +56,13 @@ const Login = (props) => {
                         console.log('Result is ', result)
                         if(result.result === "true"){
                             Auth.onAuthentication('');
-                            props.headerRef.current.updateLogged('');
+                            props.headerRef.current.updateLogged('');/*
                             let minutesForActiveSession = parseInt(process.env.REACT_APP_MODAL_SESSION_ACTIVE_MINUTES);
                             let timeForActiveSession = 1000 * 60 * minutesForActiveSession;
                             setTimeout(() => { 
                                 props.modalSessionRef.current.showModal();
                                 Auth.onLogout(); 
-                            }, timeForActiveSession);
+                            }, timeForActiveSession);*/
                             history.push("/ref");
                         }else{
                             setErrorMsg('password invalido.')

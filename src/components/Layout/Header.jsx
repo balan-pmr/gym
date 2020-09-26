@@ -52,9 +52,9 @@ const Header = forwardRef((props, ref) => {
                          &&
                          process.env.REACT_APP_LIST_OF_MEMBERS.split(",").map((item, i) => {
                             return (
-                            <li>
+                            <li key={i} >
                                 <Link  key={i} to={'/metrics/'+item}  >
-                                    <span className="ml-link" >
+                                    <span key={i} className="ml-link" >
                                         {item}
                                     </span>
                                 </Link>

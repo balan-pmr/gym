@@ -13,7 +13,39 @@ when developing use
 
 
 
+                            {lowFat?    <th style={{backgroundColor:"crimson", color:"white"}}>-(Low)</th>        :  <th>-(Low)</th> }
+                            {normalFat? <th style={{backgroundColor:"crimson", color:"white"}}>0 (Normal)</th>    : <th>0 (Normal)</th>}
+                            {highFat?   <th style={{backgroundColor:"crimson", color:"white"}}>+ (High)</th>      : <th>+ (High)</th>}
+                            {veryFat?   <th style={{backgroundColor:"crimson", color:"white"}}>++ (Very High)</th>: <th>++ (Very High)</th>}
 
+                                // onMountComponnet
+    useEffect( () => {
+        //props.lastFat === undefined && props.gender === undefined
+
+        if(props.lastFat !== undefined && props.gender !== undefined && props.age !== undefined && props.age>0 && props.lastFat>0 ){
+            
+            console.log('References lastfat: ', props.lastFat)
+            console.log('References gender: ', props.gender)
+            console.log('References age: ', props.age)
+            
+            if(props.gender==="FEMALE" && (props.age >=10 && props.age <=39)  ){
+                if(props.lastFat<21.0){
+                    setLowFat(true)
+                }else
+                if(props.lastFat>=21.0 && props.lastFat<=32.9){
+                    setNormalFat(true)
+                }else
+                if(props.lastFat>=33.0 && props.lastFat<=38.9){
+                    setHighFat(true)
+                }else
+                if(props.lastFat>=39.0 ){
+                    setVeryFat(true)
+                }
+            }
+            
+        }
+        
+    }, [props.lastFat, props.gender, props.age]);
 
 
 
