@@ -20,7 +20,7 @@ const Footer = ({ copyright }) => (
           <img src={process.env.REACT_APP_ROUTER_BASE+'/assets/images/gym/gym.png'}  alt="Home Icon" style={{width:'40px', margin:'5px' }}  />            
           </Col>
           <Col span={10} style={{ textAlign:'left'}} > 
-          <p style={{ fontStyle:'italic', fontSize:'15px'}} > made with <FontAwesomeIcon icon={faHeart} className="svg-blue" /> to Ale.  </p> 
+          <p style={{ fontStyle:'italic', fontSize:'15px', padding:'10px', color:'white' }} > <b> made with <FontAwesomeIcon icon={faHeart} className="svg-blue" /> to Ale.  </b> </p> 
           </Col>
           
       </Row>

@@ -20,8 +20,8 @@ const References = (props) => {
     const colorBmi = { backgroundColor:"#ff748c" , color:"white"};
 
     return (
-        <div    >
-        <Box className="box" display="table-cell"    > 
+        <div  style={{paddingLeft:'221px'}}  >
+        <Box className="box" display="table-cell"  > 
         
             <Box display={display}  >
                 <h3 style={colorFat} >Body Fat Percentege (grasa en cuerpo)</h3>

@@ -40,11 +40,11 @@ const Header = forwardRef((props, ref) => {
                 <Link to="/ref" >
                     <img src={process.env.REACT_APP_ROUTER_BASE+'/assets/images/gym/gym.png'}  alt="Home Icon" style={{ width: '80px', margin: '15px 0 0px 0' }} />                 
                 </Link>
-                <p style={{ fontSize: '11px' }} > nosotros bien gorditos jiji  </p>
+                <p style={{ fontSize: '11px', color:'white' }} > <b> Se les acabaron sus gorditos... </b>  </p>
             </Col>
             <Col span={4} style={{ textAlign: 'left' }}>
                 <nav>
-                    <ul>
+                    <ul style={{ listStyleType :'none' }} >
 
                         <li>
                             <Link to="/ref" >
