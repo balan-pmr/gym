@@ -60,7 +60,7 @@ const Header = forwardRef((props, ref) => {
                          // ale,balan,alemartinez,paula,uriel,gibran,juan
                         <Dropdown
                                 className="ml-form-dropdown"
-                                options={[{'value': 'ale'},{'value': 'balan'},{'value': 'alemartinez'},{'value': 'paula'},{'value': 'uriel'},{'value': 'gibran'},{'value': 'juan'}]}
+                                options={[{'value': 'ale'},{'value': 'balan'},{'value': 'henry'},{'value': 'alemartinez'},{'value': 'paula'},{'value': 'uriel'},{'value': 'gibran'},{'value': 'juan'}]}
                                 value={valueSourceSystem}
                                 onChange={event => { console.log('event is ', event); history.push("/metrics/"+event.value);   }}
                         />

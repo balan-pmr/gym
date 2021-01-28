@@ -2,11 +2,13 @@ DEPLOY WITH
 
 npm run deploy
 
-Note: Before deploy update this line in package.json
+Note: 
+Before deploy update this line in package.json
   "homepage": "https://balan-pmr.github.io/gym",
   "homepage": "https://balan-pmr.github.io/gym",
 
-when developing use
+when developing in local use
+
   "homepage": "./",
 
 
